@@ -1,0 +1,9 @@
+# Supabase CLI config (supabase init দিয়ে তৈরি হওয়া ফাইলের সংক্ষিপ্ত রূপ)
+project_id = "delta-classroom"
+
+[db]
+major_version = 15
+
+[auth]
+site_url = "http://localhost:5173"
+additional_redirect_urls = ["http://localhost:5173"]
