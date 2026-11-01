@@ -1,1 +1,0 @@
-export default function Alert({children,type='info'}){return <div className={`alert alert-${type}`}>{children}<style>{`.alert{padding:12px;border-radius:10px;font-size:13px}.alert-info{background:rgba(109,156,255,.1);color:#a9c2ff}.alert-error{background:rgba(251,113,133,.1);color:#ff9aaa}`}</style></div>}

@@ -1,1 +1,0 @@
-import {api} from '../lib/api.js';export const courseService={list:()=>api.get('/courses'),create:payload=>api.post('/courses',payload),update:(id,payload)=>api.patch(`/courses/${id}`,payload),remove:id=>api.delete(`/courses/${id}`)};
