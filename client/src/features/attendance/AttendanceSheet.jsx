@@ -1,0 +1,1 @@
+export default function AttendanceSheet({records=[]}){return <div className='panel' style={{padding:16}}>{records.length?records.map((r,i)=><p key={r.id||i}>{r.student_name||'শিক্ষার্থী'} — {r.status}</p>):<p className='muted'>উপস্থিতির তথ্য নেই।</p>}</div>}

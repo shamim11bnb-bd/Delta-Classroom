@@ -1,0 +1,1 @@
+Reserved module directory. The routed workspace page for this feature is implemented in src/app/AppRoutes.jsx and src/components/common/WorkspacePage.jsx. Add feature-specific page logic here as the backend API is completed.
