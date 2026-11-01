@@ -1,0 +1,3 @@
+-- ডেভেলপমেন্টে প্রথম admin বানাতে: আগে সাইনআপ করুন, তারপর নিজের ইমেইল দিয়ে নিচেরটি চালান
+-- update public.profiles set role = 'admin'
+-- where id = (select id from auth.users where email = 'you@example.com');
