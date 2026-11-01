@@ -1,6 +1,0 @@
-{
-  "name": "sa-delta-classroom",
-  "private": true,
-  "version": "1.0.0",
-  "scripts": {"build:client": "npm --prefix client run build", "dev:client": "npm --prefix client run dev"}
-}
