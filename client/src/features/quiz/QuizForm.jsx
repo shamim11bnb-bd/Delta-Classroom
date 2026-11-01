@@ -1,1 +1,0 @@
-export default function QuizForm({onSubmit}){return <form onSubmit={onSubmit} className='form-grid'><label className='field'>কুইজের নাম<input name='title' required/></label><label className='field'>সময় (মিনিট)<input name='duration_minutes' type='number' min='1' defaultValue='10'/></label><button className='btn btn-primary'>কুইজ তৈরি</button></form>}

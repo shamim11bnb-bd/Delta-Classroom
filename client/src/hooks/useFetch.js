@@ -1,2 +1,0 @@
-import {useEffect,useState} from 'react';import {api} from '../lib/api.js';
-export default function useFetch(path){const [state,setState]=useState({data:null,loading:true,error:null});useEffect(()=>{let active=true;if(!path){setState({data:null,loading:false,error:null});return;}api.get(path).then(({data})=>active&&setState({data,loading:false,error:null})).catch(error=>active&&setState({data:null,loading:false,error:error.message}));return()=>{active=false;};},[path]);return state;}

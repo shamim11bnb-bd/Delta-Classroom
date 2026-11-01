@@ -1,1 +1,0 @@
-export default function LessonList({lessons=[]}){return <div className='lesson-list'>{lessons.length?lessons.map((x,i)=><div className='lesson-row' key={x.id||i}><b>{x.title}</b><span>{x.duration||'Lesson'}</span></div>):<p className='muted'>এখনো কোনো লেসন নেই।</p>}</div>}

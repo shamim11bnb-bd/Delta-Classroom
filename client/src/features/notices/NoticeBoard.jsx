@@ -1,1 +1,0 @@
-export default function NoticeBoard({notices=[]}){return <div>{notices.length?notices.map(n=><article className='panel' style={{padding:16,marginBottom:10}} key={n.id}><b>{n.title}</b><p className='muted'>{n.body}</p></article>):<p className='muted'>কোনো নোটিশ নেই।</p>}</div>}
