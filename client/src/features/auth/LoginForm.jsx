@@ -1,0 +1,1 @@
+export default function LoginForm({onSubmit,busy=false}){return <form onSubmit={onSubmit} className="auth-form"><label className="field">ইমেইল<input name="email" type="email" required/></label><label className="field">পাসওয়ার্ড<input name="password" type="password" required/></label><button className="btn btn-primary" disabled={busy}>লগইন</button></form>}

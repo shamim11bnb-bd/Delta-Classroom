@@ -1,0 +1,1 @@
+export default function AssignmentList({items=[]}){return <div>{items.length?items.map(x=><article className='panel' style={{padding:16,marginBottom:10}} key={x.id}><b>{x.title}</b><p className='muted'>{x.description}</p></article>):<p className='muted'>কোনো অ্যাসাইনমেন্ট নেই।</p>}</div>}

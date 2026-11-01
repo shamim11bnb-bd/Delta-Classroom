@@ -1,0 +1,1 @@
+export default function LessonForm({onSubmit}){return <form onSubmit={onSubmit} className='form-grid'><label className='field'>লেসনের নাম<input name='title' required/></label><label className='field'>ভিডিও URL<input name='video_url' type='url'/></label><button className='btn btn-primary'>লেসন যোগ করুন</button></form>}

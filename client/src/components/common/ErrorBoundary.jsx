@@ -1,0 +1,1 @@
+import {Component} from 'react';export default class ErrorBoundary extends Component{constructor(p){super(p);this.state={error:false}}static getDerivedStateFromError(){return {error:true}}render(){if(this.state.error)return <div className="empty">এই পেজটি লোড করতে সমস্যা হয়েছে। পেজটি রিফ্রেশ করুন।</div>;return this.props.children}}
