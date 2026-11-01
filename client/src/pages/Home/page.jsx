@@ -1,3 +1,406 @@
-import {Link} from 'react-router-dom';import {ArrowRight,BookOpen,PlayCircle,ShieldCheck,Users,GraduationCap,CheckCircle2,Sparkles} from 'lucide-react';
-const features=[['নিজস্ব শেখার গতি','নিজের সময় ও সুবিধা অনুযায়ী ক্লাস, লেসন ও অনুশীলন।',BookOpen],['পরীক্ষা ও মূল্যায়ন','কুইজ, অ্যাসাইনমেন্ট এবং ফলাফলের মাধ্যমে অগ্রগতি যাচাই।',CheckCircle2],['নিরাপদ শিক্ষা পরিবেশ','শিক্ষার্থী, শিক্ষক ও অ্যাডমিনের জন্য আলাদা ব্যবস্থাপনা।',ShieldCheck]];
-export default function Home(){return <div className="home-page"><section className="hero"><div className="page-wrap hero-grid"><div className="hero-copy"><div className="hero-badge"><Sparkles size={14}/> SMART LEARNING PLATFORM</div><h1>শেখার প্রতিটি ধাপে<br/><span>এগিয়ে যাও</span> আত্মবিশ্বাসে</h1><p>SA Delta Classroom — ক্লাস, কোর্স, পরীক্ষা ও শেখার অগ্রগতি পরিচালনার একটি আধুনিক ডিজিটাল শিক্ষা প্ল্যাটফর্ম।</p><div className="hero-actions"><Link to="/signup" className="btn btn-primary">শেখা শুরু করুন <ArrowRight size={17}/></Link><Link to="/login" className="btn btn-ghost"><PlayCircle size={17}/> লগইন করুন</Link></div><div className="hero-trust"><span><CheckCircle2 size={15}/> সহজ ব্যবহার</span><span><CheckCircle2 size={15}/> সব ডিভাইসে</span><span><CheckCircle2 size={15}/> এক জায়গায় সব</span></div></div><div className="hero-visual"><div className="orbit orbit-a"/><div className="orbit orbit-b"/><div className="hero-card main-card"><div className="card-top"><span className="live-dot"/> LEARNING OVERVIEW <span className="card-dots">•••</span></div><div className="hero-illustration"><div className="book-stack"><div/><div/><div/></div><div className="person"><div className="head"/><div className="body"/><div className="laptop">SA</div></div><div className="plant"><i/><i/><i/><b/></div></div><div className="mini-progress"><div><small>আজকের অগ্রগতি</small><b>শেখা চালিয়ে যাও!</b></div><span>↗</span></div><div className="progress-line"><i/></div></div><div className="float-card float-one"><span className="float-icon"><BookOpen size={17}/></span><div><b>নতুন লেসন</b><small>শেখা শুরু করুন</small></div></div><div className="float-card float-two"><span className="float-icon blue"><GraduationCap size={18}/></span><div><b>আপনার ক্লাস</b><small>এক জায়গায়</small></div></div></div></div></section><section className="feature-section page-wrap" id="features"><div className="center-heading"><div className="eyebrow">WHY DELTA CLASSROOM</div><h2>শিক্ষার জন্য প্রয়োজনীয় সবকিছু</h2><p>শেখা, শেখানো এবং অগ্রগতি পর্যবেক্ষণের সহজ সমাধান।</p></div><div className="feature-grid">{features.map(([title,desc,Icon])=><article className="feature-card panel" key={title}><span className="feature-icon"><Icon size={23}/></span><h3>{title}</h3><p>{desc}</p><span className="feature-arrow"><ArrowRight size={17}/></span></article>)}</div></section><section className="cta-section page-wrap"><div className="cta panel"><div><div className="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h2>আজ থেকেই শেখার যাত্রা শুরু হোক</h2><p>একটি অ্যাকাউন্ট তৈরি করে আপনার শিক্ষা কার্যক্রম সাজিয়ে নিন।</p></div><Link to="/signup" className="btn btn-primary">ফ্রি অ্যাকাউন্ট তৈরি <ArrowRight size={17}/></Link></div></section><style>{`.home-page{overflow:hidden}.hero{padding:76px 0 85px;position:relative;background:radial-gradient(ellipse at 78% 42%,rgba(25,169,157,.12),transparent 35%),linear-gradient(180deg,#0c1728,#0b1220)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px}.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(32,199,180,.24);border-radius:99px;color:#70e1d6;background:rgba(32,199,180,.08);font-size:10px;font-weight:800;letter-spacing:.1em}.hero-copy h1{font-size:clamp(38px,5.2vw,64px);line-height:1.23;letter-spacing:-.04em;margin:22px 0}.hero-copy h1 span{color:var(--primary)}.hero-copy>p{max-width:550px;color:#a4b4c9;font-size:16px;line-height:1.9}.hero-actions{display:flex;gap:12px;margin-top:27px;flex-wrap:wrap}.hero-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;color:#91a6bd;font-size:11px}.hero-trust span{display:flex;align-items:center;gap:6px}.hero-trust svg{color:var(--primary)}.hero-visual{height:440px;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:1px solid rgba(32,199,180,.12);border-radius:50%;transform:rotate(-20deg)}.orbit-a{width:430px;height:300px}.orbit-b{width:350px;height:400px;transform:rotate(35deg)}.hero-card{position:relative;width:min(340px,80%);padding:17px;border:1px solid rgba(143,181,205,.2);border-radius:20px;background:linear-gradient(145deg,#1b3045,#101d30);box-shadow:0 30px 90px rgba(0,0,0,.4);transform:rotate(-3deg)}.card-top{font-size:9px;color:#a4b9c9;letter-spacing:.1em}.live-dot{display:inline-block;width:6px;height:6px;background:var(--primary);border-radius:50%;margin-right:6px}.card-dots{float:right}.hero-illustration{height:225px;position:relative;margin:10px 0;background:linear-gradient(145deg,rgba(32,199,180,.1),rgba(109,156,255,.1));border-radius:14px;overflow:hidden}.book-stack{position:absolute;bottom:24px;left:26px;display:grid;gap:3px;transform:rotate(-7deg)}.book-stack div{width:85px;height:13px;border-radius:3px;background:#2b9f9c;border-bottom:3px solid rgba(0,0,0,.2)}.book-stack div:nth-child(2){background:#d5a35c;width:75px;margin-left:8px}.book-stack div:nth-child(3){background:#637dc0;width:90px;margin-left:-5px}.person{position:absolute;bottom:0;left:42%;width:120px;height:180px}.person .head{position:absolute;top:13px;left:39px;width:48px;height:54px;border-radius:45% 45% 48% 48%;background:#bd805e;box-shadow:inset 0 9px #273043}.person .body{position:absolute;top:64px;left:17px;width:92px;height:105px;border-radius:36px 36px 0 0;background:#238d8a}.laptop{position:absolute;top:96px;left:0;width:116px;height:70px;border:5px solid #7f9aaf;border-bottom:9px solid #536b81;border-radius:8px;background:#14263c;color:#50d6c8;display:grid;place-items:center;font-size:18px;font-weight:900}.plant{position:absolute;right:18px;bottom:0;width:45px;height:80px;border-bottom:14px solid #b77f56}.plant i{position:absolute;bottom:14px;left:18px;width:15px;height:45px;border-radius:100% 0;background:#36a58e;transform:rotate(-28deg)}.plant i:nth-child(2){transform:rotate(28deg);left:5px;height:36px}.plant i:nth-child(3){transform:rotate(55deg);left:25px;height:30px}.mini-progress{display:flex;justify-content:space-between;align-items:center}.mini-progress small,.mini-progress b{display:block}.mini-progress small{font-size:9px;color:#8da3b9}.mini-progress b{font-size:12px;margin-top:4px}.mini-progress>span{color:var(--primary);font-size:24px}.progress-line{height:5px;background:#263c50;border-radius:9px;margin-top:12px}.progress-line i{display:block;width:68%;height:100%;background:var(--primary);border-radius:9px}.float-card{position:absolute;display:flex;align-items:center;gap:10px;padding:12px 15px;border:1px solid var(--line);border-radius:13px;background:#17283c;box-shadow:var(--shadow)}.float-one{top:67px;right:0}.float-two{bottom:55px;left:0}.float-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:rgba(32,199,180,.13);color:var(--primary)}.float-icon.blue{background:rgba(109,156,255,.14);color:#8aafff}.float-card b,.float-card small{display:block}.float-card b{font-size:11px}.float-card small{font-size:9px;color:var(--muted);margin-top:4px}.feature-section{padding:70px 0}.center-heading{text-align:center;margin-bottom:32px}.center-heading h2{font-size:clamp(25px,4vw,36px);margin:10px 0}.center-heading p{color:var(--muted)}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature-card{padding:24px;position:relative;transition:.2s}.feature-card:hover{transform:translateY(-5px);border-color:rgba(32,199,180,.35)}.feature-icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:rgba(32,199,180,.1);color:var(--primary)}.feature-card h3{font-size:17px;margin:20px 0 9px}.feature-card p{font-size:13px;color:var(--muted);line-height:1.8;margin:0 0 22px}.feature-arrow{color:var(--primary)}.cta-section{padding:10px 0 75px}.cta{padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:25px;background:linear-gradient(110deg,#172d42,#14263b)}.cta h2{font-size:clamp(22px,3vw,30px);margin:10px 0}.cta p{color:var(--muted);margin:0;font-size:13px}@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy>p{margin:auto}.hero-actions,.hero-trust{justify-content:center}.hero-visual{height:390px}.feature-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.hero{padding:50px 0 35px}.hero-copy h1{font-size:39px}.hero-visual{height:330px;transform:scale(.9)}.float-one{right:-5px}.float-two{left:-5px}.feature-grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column;padding:24px}}`}</style></div>}
+import { Link } from 'react-router-dom';
+import {
+  ArrowRight, BookOpen, GraduationCap, Users, Award, Play,
+  CheckCircle2, Sparkles, ClipboardCheck, BarChart3,
+  Video, FileText, Bell, Star, Mail, Phone, MapPin,
+  Facebook, Youtube, Github,
+} from 'lucide-react';
+
+export default function HomePage() {
+  /* ── Data (placeholder — পরে Supabase/API থেকে আসবে) ── */
+  const stats = [
+    { value: '১০০০+', label: 'শিক্ষার্থী', icon: GraduationCap },
+    { value: '৫০+',   label: 'কোর্স',      icon: BookOpen },
+    { value: '৩০+',   label: 'শিক্ষক',     icon: Users },
+    { value: '৯৫%',   label: 'সন্তুষ্টি',  icon: Award },
+  ];
+
+  const features = [
+    { icon: Video,          title: 'লাইভ ও রেকর্ডেড ক্লাস', desc: 'যেকোনো সময়, যেকোনো জায়গা থেকে ক্লাস করুন।' },
+    { icon: ClipboardCheck, title: 'অ্যাসাইনমেন্ট ও কুইজ', desc: 'সহজে জমা দিন, ইনস্ট্যান্ট ফিডব্যাক পান।' },
+    { icon: BarChart3,      title: 'প্রোগ্রেস ট্র্যাকিং', desc: 'নিজের অগ্রগতি গ্রাফে দেখুন প্রতিদিন।' },
+    { icon: FileText,       title: 'পরীক্ষা ও ফলাফল', desc: 'অনলাইন পরীক্ষা, সাথে সাথে ফলাফল।' },
+    { icon: Bell,           title: 'নোটিশ ও নোটিফিকেশন', desc: 'গুরুত্বপূর্ণ আপডেট মিস করবেন না।' },
+    { icon: Award,          title: 'সার্টিফিকেট', desc: 'কোর্স শেষে পান ডিজিটাল সার্টিফিকেট।' },
+  ];
+
+  const courses = [
+    { title: 'ম্যাথমেটিক্স', teacher: 'রহিম স্যার',    tag: 'Class 10',  color: '#20c7b4' },
+    { title: 'ইংরেজি',       teacher: 'করিম ম্যাডাম',  tag: 'Class 9',   color: '#6d9cff' },
+    { title: 'বিজ্ঞান',      teacher: 'সুমন স্যার',    tag: 'Class 10',  color: '#f5a524' },
+  ];
+
+  const steps = [
+    { n: '০১', title: 'রেজিস্ট্রেশন করুন', desc: 'ফ্রি অ্যাকাউন্ট খুলুন মাত্র ১ মিনিটে।' },
+    { n: '০২', title: 'কোর্স বেছে নিন',   desc: 'আপনার পছন্দের কোর্সে এনরোল করুন।' },
+    { n: '০৩', title: 'শেখা শুরু করুন',  desc: 'লাইভ ক্লাস, অ্যাসাইনমেন্ট, পরীক্ষা — সব এক জায়গায়।' },
+  ];
+
+  const notices = [
+    { title: 'নতুন ব্যাচ শুরু হচ্ছে আগামী সপ্তাহে', date: '২ দিন আগে' },
+    { title: 'মিড-টার্ম পরীক্ষার রুটিন প্রকাশিত', date: '৫ দিন আগে' },
+    { title: 'বিজ্ঞান মেলায় রেজিস্ট্রেশন চলছে', date: '১ সপ্তাহ আগে' },
+  ];
+
+  return (
+    <div className="home-page">
+
+      {/* ═══════ HERO ═══════ */}
+      <section className="hero">
+        <div className="hero-bg-dots" aria-hidden="true" />
+        <div className="hero-inner">
+          <div className="hero-text">
+            <span className="hero-badge">
+              <Sparkles size={14} /> SA Delta Classroom
+            </span>
+            <h1>
+              শেখার নতুন <span className="grad">অভিজ্ঞতা</span> <br />
+              শুরু হোক আজই
+            </h1>
+            <p>
+              আধুনিক অনলাইন ক্লাসরুম প্ল্যাটফর্ম — লাইভ ক্লাস, অ্যাসাইনমেন্ট,
+              পরীক্ষা ও ফলাফল, সব এক জায়গায়।
+            </p>
+            <div className="hero-actions">
+              <Link to="/signup" className="btn btn-primary">
+                শুরু করুন <ArrowRight size={17} />
+              </Link>
+              <Link to="/login" className="btn btn-ghost">
+                <Play size={15} /> ডেমো দেখুন
+              </Link>
+            </div>
+            <ul className="hero-checks">
+              <li><CheckCircle2 size={16} /> ফ্রি ট্রায়াল</li>
+              <li><CheckCircle2 size={16} /> কোনো কার্ড লাগবে না</li>
+              <li><CheckCircle2 size={16} /> ২৪/৭ সাপোর্ট</li>
+            </ul>
+          </div>
+
+          <div className="hero-art" aria-hidden="true">
+            <div className="art-card card-1">
+              <div className="art-icon"><BookOpen size={22} /></div>
+              <div className="art-lines">
+                <span></span><span></span>
+              </div>
+            </div>
+            <div className="art-card card-2">
+              <div className="art-icon"><ClipboardCheck size={22} /></div>
+              <div className="art-lines">
+                <span></span><span></span>
+              </div>
+            </div>
+            <div className="art-card card-3">
+              <div className="art-icon"><Award size={22} /></div>
+              <div className="art-lines">
+                <span></span><span></span>
+              </div>
+            </div>
+            <div className="art-glow" />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ STATS ═══════ */}
+      <section className="stats-strip">
+        {stats.map((s, i) => {
+          const Icon = s.icon;
+          return (
+            <div className="stat-item" key={i}>
+              <div className="stat-icon"><Icon size={20} /></div>
+              <div>
+                <strong>{s.value}</strong>
+                <small>{s.label}</small>
+              </div>
+            </div>
+          );
+        })}
+      </section>
+
+      {/* ═══════ FEATURES ═══════ */}
+      <section className="section features">
+        <div className="section-head">
+          <span className="kicker">FEATURES</span>
+          <h2>সবকিছু যা শেখার জন্য দরকার</h2>
+          <p>আধুনিক প্রযুক্তিতে সাজানো সহজ, সুন্দর আর শক্তিশালী টুলস।</p>
+        </div>
+        <div className="features-grid">
+          {features.map((f, i) => {
+            const Icon = f.icon;
+            return (
+              <div className="feature-card" key={i}>
+                <div className="feature-icon"><Icon size={22} /></div>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ═══════ COURSES ═══════ */}
+      <section className="section courses">
+        <div className="section-head row">
+          <div>
+            <span className="kicker">COURSES</span>
+            <h2>জনপ্রিয় কোর্সসমূহ</h2>
+          </div>
+          <Link to="/student/courses" className="see-all">
+            সব দেখুন <ArrowRight size={15} />
+          </Link>
+        </div>
+        <div className="courses-grid">
+          {courses.map((c, i) => (
+            <div className="course-card" key={i}>
+              <div
+                className="course-thumb"
+                style={{ background: `linear-gradient(135deg, ${c.color}33, ${c.color}11)`, borderColor: `${c.color}44` }}
+              >
+                <BookOpen size={34} color={c.color} />
+                <span className="course-tag" style={{ color: c.color, background: `${c.color}1a`, borderColor: `${c.color}44` }}>
+                  {c.tag}
+                </span>
+              </div>
+              <div className="course-body">
+                <h3>{c.title}</h3>
+                <p><Users size={13} /> {c.teacher}</p>
+                <div className="course-foot">
+                  <div className="stars">
+                    {[1, 2, 3, 4, 5].map((n) => <Star key={n} size={12} fill="currentColor" />)}
+                  </div>
+                  <Link to="/signup" className="course-cta">এনরোল <ArrowRight size={13} /></Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════ HOW IT WORKS ═══════ */}
+      <section className="section how">
+        <div className="section-head">
+          <span className="kicker">HOW IT WORKS</span>
+          <h2>মাত্র ৩ ধাপে শুরু</h2>
+        </div>
+        <div className="steps-grid">
+          {steps.map((s, i) => (
+            <div className="step-card" key={i}>
+              <span className="step-n">{s.n}</span>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════ NOTICES ═══════ */}
+      <section className="section notices">
+        <div className="section-head row">
+          <div>
+            <span className="kicker">NOTICES</span>
+            <h2>সাম্প্রতিক নোটিশ</h2>
+          </div>
+          <Link to="/notices" className="see-all">সব দেখুন <ArrowRight size={15} /></Link>
+        </div>
+        <ul className="notice-list">
+          {notices.map((n, i) => (
+            <li key={i} className="notice-item">
+              <span className="notice-dot" />
+              <div>
+                <b>{n.title}</b>
+                <small>{n.date}</small>
+              </div>
+              <ArrowRight size={16} className="notice-arrow" />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ═══════ CTA BANNER ═══════ */}
+      <section className="cta-banner">
+        <div>
+          <h2>আজই শুরু করুন আপনার শেখার যাত্রা</h2>
+          <p>ফ্রি রেজিস্ট্রেশন করুন, কোনো ক্রেডিট কার্ড লাগবে না।</p>
+        </div>
+        <Link to="/signup" className="btn btn-primary">
+          ফ্রি রেজিস্ট্রেশন <ArrowRight size={16} />
+        </Link>
+      </section>
+
+      {/* ═══════ FOOTER ═══════ */}
+      <footer className="site-footer">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <h3>SA Delta Classroom</h3>
+            <p>আধুনিক শিক্ষার জন্য ডিজিটাল ক্লাসরুম প্ল্যাটফর্ম।</p>
+            <div className="social-row">
+              <a href="#" aria-label="Facebook"><Facebook size={16} /></a>
+              <a href="#" aria-label="YouTube"><Youtube size={16} /></a>
+              <a href="#" aria-label="GitHub"><Github size={16} /></a>
+            </div>
+          </div>
+          <div className="footer-col">
+            <h4>লিংক</h4>
+            <ul>
+              <li><Link to="/">হোম</Link></li>
+              <li><Link to="/student/courses">কোর্স</Link></li>
+              <li><Link to="/notices">নোটিশ</Link></li>
+              <li><Link to="/login">লগইন</Link></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>সাহায্য</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">যোগাযোগ</a></li>
+              <li><a href="#">প্রাইভেসি</a></li>
+              <li><a href="#">শর্তাবলী</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>যোগাযোগ</h4>
+            <ul className="contact-list">
+              <li><Mail size={14} /> info@sadelta.com</li>
+              <li><Phone size={14} /> +৮৮০ ১৭XX-XXXXXX</li>
+              <li><MapPin size={14} /> ঢাকা, বাংলাদেশ</li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} SA Delta Classroom. সর্বস্বত্ব সংরক্ষিত।</span>
+        </div>
+      </footer>
+
+      {/* ═══════ STYLES ═══════ */}
+      <style>{`
+        .home-page{max-width:1200px;margin:auto;padding:0 16px}
+
+        /* ── HERO ── */
+        .hero{position:relative;padding:clamp(40px,7vw,90px) clamp(20px,4vw,50px);border-radius:24px;margin-top:20px;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(32,199,180,.18),transparent 35%),radial-gradient(circle at 10% 90%,rgba(109,156,255,.14),transparent 40%),linear-gradient(120deg,#172b43,#101c30)}
+        .hero-bg-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:22px 22px;opacity:.4;pointer-events:none}
+        .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:1}
+        .hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 12px;border-radius:999px;background:rgba(32,199,180,.15);color:var(--primary);border:1px solid rgba(32,199,180,.3);margin-bottom:20px}
+        .hero h1{font-size:clamp(30px,5vw,52px);line-height:1.15;margin:0 0 18px;color:#fff}
+        .grad{background:linear-gradient(90deg,var(--primary),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+        .hero p{font-size:clamp(14px,1.6vw,16px);color:var(--muted);margin:0 0 26px;line-height:1.7;max-width:520px}
+        .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:12px;font-size:14px;font-weight:500;text-decoration:none;transition:all .25s ease;border:1px solid transparent;cursor:pointer}
+        .btn-primary{background:var(--primary);color:#0a1724}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(32,199,180,.35)}
+        .btn-ghost{background:rgba(255,255,255,.05);color:#dce7f6;border:1px solid rgba(255,255,255,.15)}
+        .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(32,199,180,.4)}
+        .hero-checks{list-style:none;padding:0;margin:0;display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+        .hero-checks li{display:flex;align-items:center;gap:6px}
+        .hero-checks svg{color:var(--primary)}
+
+        .hero-art{position:relative;height:320px;display:grid;place-items:center}
+        .art-glow{position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(32,199,180,.35),transparent 70%);filter:blur(20px)}
+        .art-card{position:absolute;display:flex;gap:12px;align-items:center;padding:14px 18px;border-radius:16px;background:rgba(23,43,67,.85);border:1px solid rgba(32,199,180,.25);backdrop-filter:blur(8px);box-shadow:0 12px 30px rgba(0,0,0,.35);animation:floatCard 5s ease-in-out infinite}
+        .art-card.card-1{top:20px;left:0;transform:rotate(-6deg);animation-delay:0s}
+        .art-card.card-2{top:120px;right:0;transform:rotate(5deg);animation-delay:.8s}
+        .art-card.card-3{bottom:20px;left:30px;transform:rotate(-3deg);animation-delay:1.6s}
+        .art-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(32,199,180,.18);color:var(--primary)}
+        .art-lines{display:flex;flex-direction:column;gap:6px}
+        .art-lines span{display:block;height:6px;border-radius:4px;background:rgba(255,255,255,.18)}
+        .art-lines span:first-child{width:70px}
+        .art-lines span:last-child{width:45px}
+        @keyframes floatCard{0%,100%{translate:0 0}50%{translate:0 -10px}}
+
+        /* ── STATS STRIP ── */
+        .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0;padding:18px;background:linear-gradient(120deg,rgba(32,199,180,.06),rgba(109,156,255,.05));border:1px solid var(--line);border-radius:18px}
+        .stat-item{display:flex;align-items:center;gap:12px;padding:8px}
+        .stat-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(32,199,180,.12);color:var(--primary);flex-shrink:0}
+        .stat-item strong{display:block;font-size:22px;color:#fff}
+        .stat-item small{display:block;font-size:12px;color:var(--muted)}
+
+        /* ── SECTION BASE ── */
+        .section{margin:60px 0}
+        .section-head{text-align:center;max-width:640px;margin:0 auto 36px}
+        .section-head.row{display:flex;justify-content:space-between;align-items:flex-end;text-align:left;max-width:none}
+        .kicker{display:inline-block;font-size:11px;letter-spacing:2px;color:var(--primary);font-weight:600;margin-bottom:10px}
+        .section-head h2{font-size:clamp(22px,3vw,32px);color:#fff;margin:0 0 10px}
+        .section-head p{color:var(--muted);margin:0;font-size:14px}
+        .see-all{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-size:13px;text-decoration:none;font-weight:500}
+        .see-all:hover{gap:10px}
+
+        /* ── FEATURES ── */
+        .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .feature-card{padding:24px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:all .3s ease}
+        .feature-card:hover{transform:translateY(-4px);border-color:rgba(32,199,180,.4);background:rgba(32,199,180,.05)}
+        .feature-icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(32,199,180,.12);color:var(--primary);margin-bottom:14px}
+        .feature-card h3{font-size:16px;color:#fff;margin:0 0 8px}
+        .feature-card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+
+        /* ── COURSES ── */
+        .courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+        .course-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:all .3s ease}
+        .course-card:hover{transform:translateY(-4px);border-color:rgba(32,199,180,.4);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+        .course-thumb{position:relative;height:130px;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+        .course-tag{position:absolute;top:12px;right:12px;font-size:11px;padding:4px 10px;border-radius:20px;border:1px solid;font-weight:600}
+        .course-body{padding:16px}
+        .course-body h3{font-size:16px;margin:0 0 6px;color:#fff}
+        .course-body p{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px;margin:0 0 14px}
+        .course-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line)}
+        .stars{display:flex;gap:2px;color:#f5a524}
+        .course-cta{display:inline-flex;align-items:center;gap:4px;color:var(--primary);font-size:12px;text-decoration:none;font-weight:500}
+        .course-cta:hover{gap:8px}
+
+        /* ── HOW IT WORKS ── */
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{position:relative;padding:28px 22px 22px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:all .3s ease}
+        .step-card:hover{border-color:rgba(32,199,180,.4);background:rgba(32,199,180,.04)}
+        .step-n{position:absolute;top:-14px;left:20px;font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+        .step-card h3{font-size:16px;margin:10px 0 8px;color:#fff}
+        .step-card p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+
+        /* ── NOTICES ── */
+        .notice-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+        .notice-item{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:all .25s ease;cursor:pointer}
+        .notice-item:hover{border-color:rgba(32,199,180,.4);background:rgba(32,199,180,.04)}
+        .notice-dot{width:8px;height:8px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 4px rgba(32,199,180,.15);flex-shrink:0}
+        .notice-item b{display:block;font-size:14px;color:#fff;margin-bottom:2px}
+        .notice-item small{font-size:11px;color:var(--muted)}
+        .notice-arrow{margin-left:auto;color:var(--muted);transition:transform .25s,color .25s}
+        .notice-item:hover .notice-arrow{transform:translateX(4px);color:var(--primary)}
+
+        /* ── CTA BANNER ── */
+        .cta-banner{margin:60px 0;padding:clamp(28px,5vw,50px);border-radius:22px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:radial-gradient(circle at 90% 20%,rgba(32,199,180,.25),transparent 40%),linear-gradient(120deg,#172b43,#101c30);border:1px solid rgba(32,199,180,.25)}
+        .cta-banner h2{font-size:clamp(20px,2.6vw,28px);color:#fff;margin:0 0 8px}
+        .cta-banner p{color:var(--muted);margin:0;font-size:14px}
+
+        /* ── FOOTER ── */
+        .site-footer{margin:60px 0 20px;padding:36px 26px 20px;border-radius:22px;background:linear-gradient(120deg,#0f1e30,#0a1626);border:1px solid var(--line)}
+        .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:28px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+        .footer-brand h3{font-size:17px;color:#fff;margin:0 0 10px}
+        .footer-brand p{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 16px;max-width:280px}
+        .social-row{display:flex;gap:8px}
+        .social-row a{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--line);color:var(--muted);transition:all .25s}
+        .social-row a:hover{border-color:var(--primary);color:var(--primary);background:rgba(32,199,180,.08)}
+        .footer-col h4{font-size:13px;color:#fff;margin:0 0 12px;letter-spacing:.3px}
+        .footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+        .footer-col a{font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .2s}
+        .footer-col a:hover{color:var(--primary)}
+        .contact-list li{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+        .contact-list svg{color:var(--primary);flex-shrink:0}
+        .footer-bottom{padding-top:18px;text-align:center;font-size:11.5px;color:var(--muted)}
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:900px){
+          .hero-inner{grid-template-columns:1fr;text-align:center}
+          .hero p,.hero-checks{margin-left:auto;margin-right:auto}
+          .hero-actions{justify-content:center}
+          .hero-art{height:280px;max-width:400px;margin:0 auto;width:100%}
+          .features-grid,.courses-grid,.steps-grid{grid-template-columns:repeat(2,1fr)}
+          .footer-grid{grid-template-columns:1fr 1fr}
+        }
+        @media(max-width:600px){
+          .stats-strip{grid-template-columns:1fr 1fr}
+          .features-grid,.courses-grid,.steps-grid{grid-template-columns:1fr}
+          .section-head.row{flex-direction:column;align-items:flex-start;gap:8px}
+          .cta-banner{flex-direction:column;text-align:center}
+          .footer-grid{grid-template-columns:1fr}
+          .hero-art{display:none}
+        }
+      `}</style>
+    </div>
+  );
+}
