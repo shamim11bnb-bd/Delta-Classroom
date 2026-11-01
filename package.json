@@ -1,6 +1,8 @@
 {
-  "name": "sa-delta-classroom",
-  "private": true,
+  "name": "sa-delta-classroom-backend",
   "version": "1.0.0",
-  "scripts": {"build:client": "npm --prefix client run build", "dev:client": "npm --prefix client run dev"}
+  "private": true,
+  "type": "module",
+  "scripts": {"start": "node server/src/server.js", "dev": "node --watch server/src/server.js", "check": "node --check server/src/server.js && node --check server/src/app.js"},
+  "engines": {"node": ">=20"}
 }
