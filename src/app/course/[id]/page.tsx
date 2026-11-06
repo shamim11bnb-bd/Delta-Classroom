@@ -3,11 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Course[Id]Page() {
+export default function CourseDetailPage({ params }: { params: { id: string } }) {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-6">
       <div className="border-b border-slate-800 pb-4">
-        <h1 className="text-2xl font-bold text-indigo-400">কোর্স ডিটেইলস</h1>
+        <h1 className="text-2xl font-bold text-indigo-400">কোর্স ডিটেইলস (ID: {params.id})</h1>
         <p className="text-slate-400 text-sm mt-1">কোর্সের বিস্তারিত বিবরণ, মডিউল এবং লেসন তালিকা।</p>
       </div>
 
@@ -18,8 +18,8 @@ export default function Course[Id]Page() {
       </div>
 
       <div className="pt-2 flex flex-wrap gap-3">
-        <Link href="/" className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium text-white transition">
-          হোম পেজ
+        <Link href="/course" className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium text-white transition">
+          সকল কোর্স
         </Link>
         <Link href="/dashboard" className="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded text-sm font-medium text-slate-200 transition">
           ড্যাশবোর্ড
