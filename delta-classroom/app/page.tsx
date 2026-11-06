@@ -1,711 +1,2139 @@
 
-import Link from "next/link";
-import Header from "@/clients/components/layout/Header";
-import Footer from "@/clients/components/layout/Footer";
+"use client";
 
-const stats = [
-  { value: "10K+", label: "Active Students" },
-  { value: "50+", label: "Expert Courses" },
-  { value: "100+", label: "Online Exams" },
-  { value: "95%", label: "Student Satisfaction" },
-];
+import Link from "next/link";
 
 const courses = [
   {
-    category: "Admission",
-    title: "University Admission Preparation",
-    description: "Prepare for university admission with structured lessons and practice tests.",
-    lessons: "120+ Lessons",
-    level: "Beginner to Advanced",
-    color: "bg-teal-50 text-teal-700",
+    title: "Admission Preparation",
+    subtitle: "বিশ্ববিদ্যালয় ভর্তি প্রস্তুতি",
+    category: "ADMISSION",
+    price: "৳১,৫০০",
+    oldPrice: "৳২,০০০",
+    color: "teal",
     icon: "🎓",
   },
   {
-    category: "Academic",
-    title: "HSC Complete Preparation",
-    description: "Complete academic preparation with notes, lectures and chapter-wise exams.",
-    lessons: "85+ Lessons",
-    level: "All Levels",
-    color: "bg-blue-50 text-blue-700",
+    title: "HSC Academic Course",
+    subtitle: "HSC সম্পূর্ণ একাডেমিক কোর্স",
+    category: "ACADEMIC",
+    price: "৳১,২০০",
+    oldPrice: "৳১,৮০০",
+    color: "blue",
     icon: "📚",
   },
   {
-    category: "Practice",
-    title: "English & General Knowledge",
-    description: "Improve your skills through interactive lessons and regular assessments.",
-    lessons: "60+ Lessons",
-    level: "All Levels",
-    color: "bg-purple-50 text-purple-700",
+    title: "English Foundation",
+    subtitle: "ইংরেজিতে দক্ষতা অর্জন",
+    category: "ENGLISH",
+    price: "৳৮০০",
+    oldPrice: "৳১,২০০",
+    color: "purple",
     icon: "✍️",
+  },
+  {
+    title: "ICT Master Course",
+    subtitle: "ICT বেসিক থেকে অ্যাডভান্স",
+    category: "ICT",
+    price: "৳৯০০",
+    oldPrice: "৳১,৩০০",
+    color: "orange",
+    icon: "💻",
+  },
+  {
+    title: "BCS Preparation",
+    subtitle: "প্রতিযোগিতামূলক পরীক্ষার প্রস্তুতি",
+    category: "CAREER",
+    price: "৳১,৭০০",
+    oldPrice: "৳২,২০০",
+    color: "pink",
+    icon: "🏆",
   },
 ];
 
 const features = [
   {
     icon: "🎥",
-    title: "Interactive Classes",
-    description: "Learn through organized lessons, recorded lectures and educational resources.",
-    color: "bg-teal-50",
+    title: "লাইভ ক্লাস",
+    description: "অভিজ্ঞ শিক্ষকদের সাথে সরাসরি ক্লাসে অংশগ্রহণ।",
   },
   {
     icon: "📝",
-    title: "Smart Examination",
-    description: "Participate in timed MCQ exams with automated evaluation and instant results.",
-    color: "bg-blue-50",
+    title: "অনলাইন পরীক্ষা",
+    description: "নিজের প্রস্তুতি যাচাই করতে নিয়মিত পরীক্ষা দাও।",
   },
   {
     icon: "📖",
-    title: "Question Bank",
-    description: "Practice topic-wise, subject-wise and chapter-wise questions.",
-    color: "bg-purple-50",
+    title: "প্রশ্ন ব্যাংক",
+    description: "বিষয়ভিত্তিক প্রশ্ন ও অনুশীলনের সুবিধা।",
   },
   {
     icon: "📊",
-    title: "Performance Reports",
-    description: "Track your progress, identify weak areas and improve your performance.",
-    color: "bg-orange-50",
-  },
-  {
-    icon: "🏆",
-    title: "Achievements",
-    description: "Track your learning milestones and celebrate your academic achievements.",
-    color: "bg-yellow-50",
-  },
-  {
-    icon: "📱",
-    title: "Learn Anywhere",
-    description: "Access your learning resources from mobile, tablet and desktop devices.",
-    color: "bg-pink-50",
+    title: "প্রগ্রেস রিপোর্ট",
+    description: "নিজের শেখার অগ্রগতি এক জায়গায় দেখো।",
   },
 ];
 
-const examFeatures = [
-  "Live timed examinations",
-  "Automatic result evaluation",
-  "Subject-wise MCQ practice",
-  "Detailed performance reports",
-];
-
-function ArrowIcon() {
+function Logo() {
   return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 12h14M12 5l7 7-7 7" />
-    </svg>
+    <Link href="/" className="brand-logo" aria-label="Delta Classroom Home">
+      <span className="brand-symbol">
+        <svg viewBox="0 0 48 48" fill="none">
+          <path
+            d="M24 5L44 41H4L24 5Z"
+            fill="white"
+            fillOpacity=".18"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M16 31L24 16L32 31"
+            stroke="white"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M18 27H30"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+        </svg>
+      </span>
+      <span className="brand-text">
+        <strong>DELTA</strong>
+        <small>CLASSROOM</small>
+      </span>
+    </Link>
   );
 }
 
-function CheckIcon() {
+function HeroIllustration() {
   return (
-    <svg
-      width="19"
-      height="19"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m5 12 4 4L19 6" />
-    </svg>
+    <div className="hero-art">
+      <div className="art-glow" />
+      <div className="floating-card card-one">
+        <span>📚</span>
+        <div>
+          <strong>Smart Learning</strong>
+          <small>Learn every day</small>
+        </div>
+      </div>
+
+      <div className="floating-card card-two">
+        <span>🏆</span>
+        <div>
+          <strong>Great Progress!</strong>
+          <small>Keep it up</small>
+        </div>
+      </div>
+
+      <div className="student-card">
+        <div className="student-window">
+          <div className="window-dots">
+            <i />
+            <i />
+            <i />
+          </div>
+          <div className="student-scene">
+            <div className="sun" />
+            <div className="student-head">
+              <div className="student-hair" />
+              <div className="student-face">
+                <i />
+                <i />
+              </div>
+              <div className="student-body" />
+            </div>
+            <div className="laptop">
+              <div className="laptop-screen">Δ</div>
+              <div className="laptop-base" />
+            </div>
+            <div className="book book-a" />
+            <div className="book book-b" />
+          </div>
+        </div>
+        <div className="art-caption">
+          <span className="caption-icon">✦</span>
+          <div>
+            <strong>Learn. Grow. Succeed.</strong>
+            <small>Your journey starts here</small>
+          </div>
+        </div>
+      </div>
+      <div className="art-circle circle-a" />
+      <div className="art-circle circle-b" />
+    </div>
   );
 }
 
-function StudentIllustration() {
+function CourseCard({ course }: { course: (typeof courses)[number] }) {
   return (
-    <svg
-      viewBox="0 0 600 500"
-      className="w-full h-auto"
-      role="img"
-      aria-label="Student learning with a laptop and books"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#CCFBF1" />
-          <stop offset="100%" stopColor="#E0F2FE" />
-        </linearGradient>
-        <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#0F766E" />
-          <stop offset="100%" stopColor="#14B8A6" />
-        </linearGradient>
-      </defs>
+    <article className="course-card group">
+      <div className={`course-art ${course.color}`}>
+        <span className="course-category">{course.category}</span>
+        <span className="course-icon">{course.icon}</span>
+        <div className="course-decoration" />
+      </div>
 
-      <circle cx="300" cy="245" r="210" fill="url(#heroBg)" />
-      <circle cx="300" cy="245" r="170" fill="#F0FDFA" opacity=".6" />
-
-      {/* Decorative elements */}
-      <circle cx="95" cy="130" r="10" fill="#14B8A6" />
-      <circle cx="480" cy="105" r="14" fill="#2DD4BF" />
-      <circle cx="505" cy="340" r="9" fill="#0F766E" />
-      <path d="M90 220l12-22 12 22z" fill="#F59E0B" />
-      <path d="M465 200l12-22 12 22z" fill="#6366F1" />
-      <path d="M120 340l8-8 8 8-8 8z" fill="#8B5CF6" />
-
-      {/* Floating book */}
-      <g transform="rotate(-12 130 180)">
-        <rect x="72" y="150" width="90" height="65" rx="8" fill="#0F766E" />
-        <path d="M117 153v59" stroke="#99F6E4" strokeWidth="3" />
-        <path d="M85 165h22M85 175h22M85 185h22" stroke="white" strokeWidth="3" strokeLinecap="round" />
-        <path d="M128 165h22M128 175h22M128 185h22" stroke="#99F6E4" strokeWidth="3" strokeLinecap="round" />
-      </g>
-
-      {/* Floating graduation cap */}
-      <g transform="translate(400 65) rotate(12)">
-        <path d="M0 25 55 0l55 25-55 25z" fill="#0F766E" />
-        <path d="M25 37v22q30 20 60 0V37" fill="#14B8A6" />
-        <path d="M108 25v30" stroke="#F59E0B" strokeWidth="4" />
-        <circle cx="108" cy="58" r="5" fill="#F59E0B" />
-      </g>
-
-      {/* Desk */}
-      <path d="M85 395h430l-20 20H105z" fill="#0F766E" />
-      <rect x="110" y="415" width="14" height="60" rx="5" fill="#115E59" />
-      <rect x="475" y="415" width="14" height="60" rx="5" fill="#115E59" />
-
-      {/* Student body */}
-      <path d="M206 386c5-85 32-137 94-137s90 52 95 137z" fill="url(#shirt)" />
-      <path d="M265 250q35 50 70 0" fill="#0D9488" />
-
-      {/* Neck */}
-      <path d="M275 220h50v42q-25 25-50 0z" fill="#EAB18D" />
-
-      {/* Head */}
-      <ellipse cx="300" cy="175" rx="70" ry="79" fill="#F2BE9A" />
-
-      {/* Hair */}
-      <path
-        d="M230 170c-12-78 36-107 85-91 45-8 68 30 57 88-13-14-25-33-29-49-26 28-68 36-113 33z"
-        fill="#243B53"
-      />
-      <path d="M230 166q-12 30 1 50l12-35z" fill="#243B53" />
-      <path d="M359 162q15 30 1 52l-12-37z" fill="#243B53" />
-
-      {/* Face */}
-      <ellipse cx="277" cy="181" rx="5" ry="7" fill="#243B53" />
-      <ellipse cx="324" cy="181" rx="5" ry="7" fill="#243B53" />
-      <path d="M285 209q15 13 30 0" stroke="#B4533C" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <path d="M263 167q12-8 24-2M313 165q12-6 24 2" stroke="#243B53" strokeWidth="4" fill="none" strokeLinecap="round" />
-
-      {/* Laptop */}
-      <g>
-        <rect x="190" y="310" width="220" height="125" rx="12" fill="#334155" />
-        <rect x="199" y="319" width="202" height="107" rx="7" fill="#E0F2FE" />
-        <rect x="214" y="333" width="172" height="77" rx="5" fill="#0F766E" />
-        <circle cx="300" cy="370" r="19" fill="#CCFBF1" />
-        <path d="M290 370l7 7 14-16" stroke="#0F766E" strokeWidth="4" fill="none" strokeLinecap="round" />
-        <path d="M180 436h240l-15 12H195z" fill="#94A3B8" />
-      </g>
-
-      {/* Books on desk */}
-      <g transform="translate(425 355)">
-        <rect x="0" y="20" width="72" height="17" rx="3" fill="#F59E0B" />
-        <rect x="5" y="3" width="72" height="17" rx="3" fill="#6366F1" />
-        <rect x="0" y="-14" width="72" height="17" rx="3" fill="#14B8A6" />
-        <path d="M12-8h40M12 9h40M12 26h40" stroke="white" strokeWidth="2" opacity=".8" />
-      </g>
-
-      {/* Floating learning card */}
-      <g transform="translate(375 265)">
-        <rect width="112" height="63" rx="12" fill="white" />
-        <circle cx="22" cy="22" r="11" fill="#CCFBF1" />
-        <path d="M18 22l3 3 6-7" stroke="#0F766E" strokeWidth="2" fill="none" />
-        <rect x="42" y="15" width="53" height="6" rx="3" fill="#0F766E" />
-        <rect x="42" y="27" width="37" height="5" rx="3" fill="#CBD5E1" />
-        <rect x="14" y="43" width="84" height="7" rx="3" fill="#E2E8F0" />
-        <rect x="14" y="43" width="65" height="7" rx="3" fill="#14B8A6" />
-      </g>
-    </svg>
+      <div className="course-content">
+        <h3>{course.title}</h3>
+        <p>{course.subtitle}</p>
+        <div className="course-bottom">
+          <div className="course-price">
+            <strong>{course.price}</strong>
+            <del>{course.oldPrice}</del>
+          </div>
+          <Link href="/course" className="course-arrow" aria-label="কোর্স দেখুন">
+            →
+          </Link>
+        </div>
+      </div>
+    </article>
   );
 }
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white text-slate-800">
-      <Header />
+    <main className="home-page">
+      {/* HEADER */}
+      <header className="site-header">
+        <div className="container header-inner">
+          <Logo />
 
-      <main>
-        {/* HERO SECTION */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-cyan-50">
-          <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl" />
-          <div className="absolute bottom-0 -left-32 h-80 w-80 rounded-full bg-cyan-200/30 blur-3xl" />
+          <nav className="desktop-nav">
+            <Link href="/">হোম</Link>
+            <Link href="/course">কোর্সসমূহ</Link>
+            <Link href="/exam">পরীক্ষা</Link>
+            <Link href="/questionbank">প্রশ্ন ব্যাংক</Link>
+            <Link href="/about">আমাদের সম্পর্কে</Link>
+          </nav>
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-14 lg:py-24">
-            <div className="space-y-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-teal-700 shadow-sm">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-teal-500" />
-                Smart Learning. Better Future.
-              </div>
+          <div className="header-actions">
+            <Link href="/login" className="login-link">
+              লগইন
+            </Link>
+            <Link href="/register" className="register-button">
+              শুরু করো <span>↗</span>
+            </Link>
+          </div>
 
-              <h1 className="max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                Learn Smarter,
-                <span className="block text-teal-600">
-                  Achieve Bigger.
-                </span>
-              </h1>
+          <Link href="/login" className="mobile-login">
+            Login ↗
+          </Link>
+        </div>
+      </header>
 
-              <p className="max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
-                Welcome to SA Delta Classroom. Discover quality courses,
-                practice online examinations and build your future with
-                smarter digital learning.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/register"
-                  className="inline-flex items-center gap-3 rounded-xl bg-teal-600 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-teal-600/20 transition hover:-translate-y-1 hover:bg-teal-700"
-                >
-                  Start Learning <ArrowIcon />
-                </Link>
-
-                <Link
-                  href="/course"
-                  className="inline-flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-7 py-4 text-sm font-bold text-slate-700 shadow-sm transition hover:-translate-y-1 hover:border-teal-300 hover:text-teal-700"
-                >
-                  Explore Courses <ArrowIcon />
-                </Link>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-4 pt-3">
-                <div className="flex -space-x-3">
-                  {["S", "A", "R", "M"].map((letter, i) => (
-                    <div
-                      key={letter}
-                      className={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-white text-xs font-bold text-white ${
-                        ["bg-teal-600", "bg-blue-600", "bg-indigo-500", "bg-emerald-600"][i]
-                      }`}
-                    >
-                      {letter}
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <p className="text-sm font-extrabold text-slate-800">
-                    Learn Together, Grow Together
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    Your journey starts here
-                  </p>
-                </div>
-              </div>
+      {/* HERO */}
+      <section className="hero-section">
+        <div className="container hero-grid">
+          <div className="hero-content">
+            <div className="hero-label">
+              <span className="label-dot" />
+              স্মার্ট লার্নিংয়ের নতুন ঠিকানা
             </div>
 
-            <div className="relative mx-auto w-full max-w-xl">
-              <div className="absolute inset-8 rounded-full bg-teal-200/40 blur-3xl" />
-              <div className="relative">
-                <StudentIllustration />
+            <h1>
+              শেখার নতুন
+              <br />
+              দিগন্তে <span>Delta</span>
+              <br />
+              Classroom
+            </h1>
 
-                <div className="absolute left-0 top-1/3 rounded-2xl border border-white bg-white/95 p-4 shadow-xl backdrop-blur">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-xl">
-                      📚
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-800">Smart Learning</p>
-                      <p className="text-[10px] text-slate-500">Learn every day</p>
-                    </div>
-                  </div>
-                </div>
+            <p className="hero-description">
+              নিজের স্বপ্ন পূরণের যাত্রা শুরু হোক সঠিক প্রস্তুতি দিয়ে।
+              মানসম্মত ক্লাস, অনলাইন পরীক্ষা ও প্রয়োজনীয় শিক্ষাসামগ্রী
+              এখন একই প্ল্যাটফর্মে।
+            </p>
 
-                <div className="absolute bottom-10 right-0 rounded-2xl border border-white bg-white/95 p-4 shadow-xl backdrop-blur">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-xl">
-                      🏆
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-800">Your Success</p>
-                      <p className="text-[10px] text-slate-500">Starts with learning</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="hero-buttons">
+              <Link href="/course" className="primary-button">
+                কোর্স দেখো <span>↗</span>
+              </Link>
+              <Link href="/about" className="secondary-button">
+                আমাদের সম্পর্কে
+                <span className="play-icon">▶</span>
+              </Link>
+            </div>
+
+            <div className="hero-trust">
+              <div className="trust-avatars">
+                <span>🎓</span>
+                <span>👨‍🎓</span>
+                <span>👩‍🎓</span>
+              </div>
+              <div>
+                <strong>শেখার যাত্রায় একসাথে</strong>
+                <small>তোমার লক্ষ্য, আমাদের সহযোগিতা</small>
               </div>
             </div>
           </div>
-        </section>
 
-        {/* STATISTICS */}
-        <section className="relative z-10 mx-auto -mt-2 max-w-7xl px-5 pb-10 sm:px-8">
-          <div className="grid grid-cols-2 gap-4 rounded-3xl border border-slate-100 bg-white p-5 shadow-xl shadow-slate-200/50 sm:grid-cols-4 sm:p-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="py-3 text-center">
-                <h3 className="text-3xl font-extrabold text-teal-700 sm:text-4xl">
-                  {stat.value}
-                </h3>
-                <p className="mt-2 text-xs font-semibold text-slate-500 sm:text-sm">
-                  {stat.label}
-                </p>
+          <HeroIllustration />
+        </div>
+
+        <div className="hero-bottom-shape" />
+      </section>
+
+      {/* STATS */}
+      <section className="stats-section">
+        <div className="container stats-grid">
+          <div className="stat-item">
+            <span>🎓</span>
+            <div>
+              <strong>অনলাইন শিক্ষা</strong>
+              <small>সহজ ও সুন্দর শেখার অভিজ্ঞতা</small>
+            </div>
+          </div>
+          <div className="stat-item">
+            <span>📚</span>
+            <div>
+              <strong>বিভিন্ন কোর্স</strong>
+              <small>এক প্ল্যাটফর্মে শেখার সুযোগ</small>
+            </div>
+          </div>
+          <div className="stat-item">
+            <span>📝</span>
+            <div>
+              <strong>নিয়মিত পরীক্ষা</strong>
+              <small>নিজেকে যাচাই করার সুবিধা</small>
+            </div>
+          </div>
+          <div className="stat-item">
+            <span>🌟</span>
+            <div>
+              <strong>দক্ষতা উন্নয়ন</strong>
+              <small>লক্ষ্য অর্জনে এগিয়ে যাও</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COURSES */}
+      <section className="courses-section" id="courses">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">OUR COURSES</span>
+              <h2>
+                তোমার জন্য সেরা <span>কোর্স</span>
+              </h2>
+              <p>নিজের প্রয়োজন অনুযায়ী কোর্স বেছে নিয়ে শেখা শুরু করো।</p>
+            </div>
+            <Link href="/course" className="view-all">
+              সব কোর্স দেখো <span>↗</span>
+            </Link>
+          </div>
+
+          <div className="course-marquee">
+            <div className="course-track">
+              {[...courses, ...courses].map((course, index) => (
+                <div className="course-slide" key={`${course.title}-${index}`}>
+                  <CourseCard course={course} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="slider-hint">
+            <span>←</span> কোর্সগুলো দেখতে থাকো <span>→</span>
+          </div>
+        </div>
+      </section>
+
+      {/* EXAM */}
+      <section className="exam-section">
+        <div className="container exam-grid">
+          <div className="exam-content">
+            <span className="eyebrow light">PRACTICE & IMPROVE</span>
+            <h2>
+              প্রস্তুতি যাচাই করো,
+              <br />
+              আত্মবিশ্বাস <span>বাড়াও।</span>
+            </h2>
+            <p>
+              নিয়মিত অনলাইন পরীক্ষায় অংশগ্রহণ করো। নিজের ফলাফল বিশ্লেষণ
+              করে দুর্বল জায়গাগুলো উন্নত করার চেষ্টা করো।
+            </p>
+            <Link href="/exam" className="exam-button">
+              পরীক্ষা শুরু করো <span>↗</span>
+            </Link>
+          </div>
+
+          <div className="exam-visual">
+            <div className="exam-circle" />
+            <div className="exam-paper">
+              <div className="paper-top">
+                <span>Δ</span>
+                <small>DELTA CLASSROOM</small>
               </div>
+              <h3>Practice Test</h3>
+              <p>Test your knowledge</p>
+              <div className="paper-line" />
+              <div className="question-row">
+                <span>01</span>
+                <div />
+                <i>✓</i>
+              </div>
+              <div className="question-row">
+                <span>02</span>
+                <div />
+                <i>✓</i>
+              </div>
+              <div className="question-row">
+                <span>03</span>
+                <div />
+                <i>✓</i>
+              </div>
+              <div className="paper-progress">
+                <span />
+              </div>
+              <small className="progress-label">Keep Learning!</small>
+            </div>
+            <div className="exam-badge">✦ Smart Learning</div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="features-section">
+        <div className="container">
+          <div className="center-heading">
+            <span className="eyebrow">WHY DELTA CLASSROOM</span>
+            <h2>
+              শেখার জন্য যা কিছু প্রয়োজন,
+              <br />
+              <span>সব এক জায়গায়</span>
+            </h2>
+            <p>
+              পড়াশোনাকে আরও সহজ, গোছানো ও কার্যকর করতে প্রয়োজনীয়
+              সুবিধাগুলো ব্যবহার করো।
+            </p>
+          </div>
+
+          <div className="features-grid">
+            {features.map((feature, index) => (
+              <article className="feature-card" key={feature.title}>
+                <div className={`feature-icon feature-${index}`}>
+                  {feature.icon}
+                </div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+                <span className="feature-number">
+                  0{index + 1}
+                </span>
+              </article>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* COURSES */}
-        <section className="py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-              <div className="max-w-2xl">
-                <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-600">
-                  Explore Learning
-                </span>
-                <h2 className="mt-3 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-                  Explore Our Popular Courses
-                </h2>
-                <p className="mt-4 leading-7 text-slate-500">
-                  Discover carefully organized courses designed to help you
-                  reach your academic goals.
-                </p>
-              </div>
-
-              <Link
-                href="/course"
-                className="inline-flex items-center gap-2 text-sm font-bold text-teal-700 hover:text-teal-900"
-              >
-                View All Courses <ArrowIcon />
-              </Link>
-            </div>
-
-            <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-              {courses.map((course) => (
-                <article
-                  key={course.title}
-                  className="group overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-900/10"
-                >
-                  <div className="relative flex h-48 items-center justify-center overflow-hidden bg-gradient-to-br from-teal-50 to-cyan-100">
-                    <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/50" />
-                    <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl bg-white text-5xl shadow-lg transition duration-300 group-hover:scale-110">
-                      {course.icon}
-                    </div>
-                    <span className={`absolute left-5 top-5 rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider ${course.color}`}>
-                      {course.category}
-                    </span>
-                  </div>
-
-                  <div className="p-7">
-                    <h3 className="text-xl font-extrabold text-slate-900 transition group-hover:text-teal-700">
-                      {course.title}
-                    </h3>
-                    <p className="mt-3 min-h-16 text-sm leading-7 text-slate-500">
-                      {course.description}
-                    </p>
-
-                    <div className="mt-5 flex flex-wrap gap-3 border-b border-slate-100 pb-5 text-xs font-semibold text-slate-500">
-                      <span>📘 {course.lessons}</span>
-                      <span>🎯 {course.level}</span>
-                    </div>
-
-                    <Link
-                      href="/course"
-                      className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-700 hover:gap-4"
-                    >
-                      Explore Course <ArrowIcon />
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+      {/* QUESTION BANK */}
+      <section className="question-section">
+        <div className="container question-box">
+          <div className="question-icon">📖</div>
+          <div className="question-copy">
+            <span className="eyebrow">QUESTION BANK</span>
+            <h2>প্রশ্ন অনুশীলন করো নিজের গতিতে</h2>
+            <p>
+              বিষয়ভিত্তিক প্রশ্ন অনুশীলনের মাধ্যমে নিজের প্রস্তুতিকে
+              আরও মজবুত করো।
+            </p>
           </div>
-        </section>
+          <Link href="/questionbank" className="question-button">
+            প্রশ্ন ব্যাংক দেখো <span>↗</span>
+          </Link>
+        </div>
+      </section>
 
-        {/* EXAM SECTION */}
-        <section className="overflow-hidden bg-slate-950 py-20 text-white sm:py-24">
-          <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
-            <div>
-              <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-400">
-                Test Your Knowledge
-              </span>
+      {/* CTA */}
+      <section className="cta-section">
+        <div className="container cta-content">
+          <div className="cta-symbol">Δ</div>
+          <span className="eyebrow light">YOUR FUTURE STARTS HERE</span>
+          <h2>
+            আজ থেকেই শুরু হোক
+            <br />
+            তোমার <span>সফলতার যাত্রা।</span>
+          </h2>
+          <p>
+            Delta Classroom-এর সাথে শেখার নতুন অভিজ্ঞতা শুরু করো।
+          </p>
+          <Link href="/register" className="cta-button">
+            এখনই অ্যাকাউন্ট তৈরি করো <span>↗</span>
+          </Link>
+        </div>
+      </section>
 
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">
-                Prepare Better with
-                <span className="block text-teal-400">
-                  Smart Online Exams.
-                </span>
-              </h2>
-
-              <p className="mt-6 max-w-xl leading-8 text-slate-400">
-                Practice regularly, participate in online examinations and
-                understand your progress with detailed performance reports.
-              </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {examFeatures.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3 text-sm text-slate-200">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-500/15 text-teal-400">
-                      <CheckIcon />
-                    </span>
-                    {feature}
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/exam"
-                className="mt-10 inline-flex items-center gap-3 rounded-xl bg-teal-500 px-7 py-4 text-sm font-bold text-white transition hover:bg-teal-400"
-              >
-                Explore Examinations <ArrowIcon />
-              </Link>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-teal-500/10 blur-3xl" />
-              <div className="relative rounded-3xl border border-white/10 bg-white/[0.05] p-6 shadow-2xl backdrop-blur sm:p-9">
-                <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                  <div>
-                    <p className="text-xs font-bold text-teal-400">EXAM DASHBOARD</p>
-                    <h3 className="mt-2 text-xl font-bold">Your Progress</h3>
-                  </div>
-                  <div className="rounded-xl bg-teal-500/15 px-3 py-2 text-xl">📊</div>
-                </div>
-
-                <div className="mt-8 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl bg-white/5 p-5">
-                    <p className="text-xs text-slate-400">Practice Tests</p>
-                    <p className="mt-3 text-3xl font-extrabold text-white">25+</p>
-                    <p className="mt-1 text-xs text-teal-400">Practice regularly</p>
-                  </div>
-                  <div className="rounded-2xl bg-white/5 p-5">
-                    <p className="text-xs text-slate-400">Learning Areas</p>
-                    <p className="mt-3 text-3xl font-extrabold text-white">10+</p>
-                    <p className="mt-1 text-xs text-teal-400">Explore subjects</p>
-                  </div>
-                </div>
-
-                <div className="mt-5 rounded-2xl bg-white/5 p-5">
-                  <div className="flex justify-between text-sm">
-                    <span className="font-bold">Learning Progress</span>
-                    <span className="text-teal-400">Keep improving</span>
-                  </div>
-                  <div className="mt-4 h-3 overflow-hidden rounded-full bg-slate-700">
-                    <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-teal-500 to-cyan-400" />
-                  </div>
-                  <p className="mt-3 text-xs text-slate-400">
-                    Every practice session takes you one step forward.
-                  </p>
-                </div>
-
-                <div className="mt-5 flex items-center gap-4 rounded-2xl border border-teal-500/20 bg-teal-500/10 p-4">
-                  <span className="text-3xl">🎯</span>
-                  <div>
-                    <p className="text-sm font-bold text-teal-300">
-                      Your Goal Matters
-                    </p>
-                    <p className="mt-1 text-xs text-slate-400">
-                      Learn, practice and achieve more.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* FOOTER */}
+      <footer className="site-footer">
+        <div className="container footer-grid">
+          <div className="footer-brand">
+            <Logo />
+            <p>
+              শেখার নতুন দিগন্ত। জ্ঞান, দক্ষতা ও আত্মবিশ্বাস
+              অর্জনের ডিজিটাল শিক্ষার প্ল্যাটফর্ম।
+            </p>
           </div>
-        </section>
 
-        {/* QUESTION BANK */}
-        <section className="bg-teal-50/60 py-20 sm:py-24">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
-            <div className="order-2 lg:order-1">
-              <div className="rounded-3xl border border-teal-100 bg-white p-6 shadow-xl sm:p-9">
-                <div className="flex items-center justify-between border-b border-slate-100 pb-5">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-teal-600">
-                      Question Bank
-                    </p>
-                    <h3 className="mt-2 text-xl font-extrabold text-slate-900">
-                      Practice Center
-                    </h3>
-                  </div>
-                  <span className="text-3xl">📚</span>
-                </div>
-
-                {[
-                  { name: "English", count: "Grammar & Vocabulary", icon: "🔤" },
-                  { name: "General Knowledge", count: "Current Affairs", icon: "🌍" },
-                  { name: "Mathematics", count: "Problem Solving", icon: "➗" },
-                  { name: "Science", count: "Conceptual Questions", icon: "🔬" },
-                ].map((subject) => (
-                  <div
-                    key={subject.name}
-                    className="mt-4 flex items-center justify-between rounded-2xl border border-slate-100 p-4 transition hover:border-teal-200 hover:bg-teal-50"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-2xl">
-                        {subject.icon}
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-slate-800">{subject.name}</p>
-                        <p className="mt-1 text-xs text-slate-500">{subject.count}</p>
-                      </div>
-                    </div>
-                    <ArrowIcon />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2">
-              <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-700">
-                Practice Makes Progress
-              </span>
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
-                One Question at a Time,
-                <span className="block text-teal-600">
-                  One Step Closer.
-                </span>
-              </h2>
-              <p className="mt-6 leading-8 text-slate-600">
-                Explore an organized question bank to strengthen your
-                knowledge. Practice questions based on subjects and topics
-                and prepare yourself for better results.
-              </p>
-              <Link
-                href="/questionbank"
-                className="mt-8 inline-flex items-center gap-3 rounded-xl bg-teal-600 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-teal-600/20 transition hover:bg-teal-700"
-              >
-                Explore Question Bank <ArrowIcon />
-              </Link>
-            </div>
+          <div className="footer-links">
+            <h3>দ্রুত লিংক</h3>
+            <Link href="/">হোম</Link>
+            <Link href="/course">কোর্সসমূহ</Link>
+            <Link href="/exam">পরীক্ষা</Link>
+            <Link href="/about">আমাদের সম্পর্কে</Link>
           </div>
-        </section>
 
-        {/* FEATURES */}
-        <section className="py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-600">
-                Why Delta Classroom
-              </span>
-              <h2 className="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-                Everything You Need to Learn Better
-              </h2>
-              <p className="mt-4 leading-7 text-slate-500">
-                A complete learning environment designed to make your
-                educational journey simple, effective and enjoyable.
-              </p>
-            </div>
-
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="group rounded-3xl border border-slate-100 bg-white p-8 transition duration-300 hover:-translate-y-2 hover:border-teal-100 hover:shadow-xl hover:shadow-teal-900/5"
-                >
-                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl ${feature.color}`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="mt-6 text-lg font-extrabold text-slate-900 group-hover:text-teal-700">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-500">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="footer-links">
+            <h3>শিক্ষার্থীদের জন্য</h3>
+            <Link href="/questionbank">প্রশ্ন ব্যাংক</Link>
+            <Link href="/login">লগইন</Link>
+            <Link href="/register">রেজিস্ট্রেশন</Link>
+            <Link href="/dashboard">ড্যাশবোর্ড</Link>
           </div>
-        </section>
 
-        {/* TESTIMONIAL */}
-        <section className="bg-slate-50 py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-teal-600">
-                Student Experience
-              </span>
-              <h2 className="mt-4 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-                Learning That Inspires
-              </h2>
-              <p className="mt-4 text-slate-500">
-                A supportive learning environment helps students move forward.
-              </p>
-            </div>
-
-            <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
-              {[
-                {
-                  name: "Student Review",
-                  role: "SA Delta Classroom Learner",
-                  text: "The organized learning resources and practice environment make studying easier and more structured.",
-                  avatar: "S",
-                },
-                {
-                  name: "Student Review",
-                  role: "Online Exam Participant",
-                  text: "The online examination system provides a convenient way to practice and understand my preparation.",
-                  avatar: "D",
-                },
-              ].map((review) => (
-                <div key={review.avatar} className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
-                  <div className="text-2xl tracking-widest text-amber-400">
-                    ★★★★★
-                  </div>
-                  <p className="mt-5 leading-8 text-slate-600">
-                    &quot;{review.text}&quot;
-                  </p>
-                  <div className="mt-7 flex items-center gap-4 border-t border-slate-100 pt-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-100 text-lg font-extrabold text-teal-700">
-                      {review.avatar}
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-extrabold text-slate-900">
-                        {review.name}
-                      </h4>
-                      <p className="mt-1 text-xs text-slate-500">{review.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="footer-contact">
+            <h3>যোগাযোগ</h3>
+            <p>📍 Rangpur, Bangladesh</p>
+            <p>✉️ Contact us for support</p>
+            <Link href="/about">আরও জানুন ↗</Link>
           </div>
-        </section>
+        </div>
 
-        {/* CTA */}
-        <section className="px-5 py-16 sm:px-8 sm:py-20">
-          <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-teal-700 via-teal-800 to-slate-900 px-7 py-16 text-center text-white shadow-2xl sm:px-14">
-            <div className="absolute -right-20 -top-32 h-80 w-80 rounded-full bg-teal-400/20 blur-3xl" />
-            <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl" />
+        <div className="container footer-bottom">
+          <p>© {new Date().getFullYear()} Delta Classroom. All rights reserved.</p>
+          <p>Designed for Better Learning ✦</p>
+        </div>
+      </footer>
 
-            <div className="relative mx-auto max-w-3xl">
-              <span className="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-teal-100">
-                Start Your Journey Today
-              </span>
+      {/* ALL PAGE CSS */}
+      <style jsx>{`
+        :global(*) {
+          box-sizing: border-box;
+        }
 
-              <h2 className="mt-7 text-3xl font-extrabold leading-tight sm:text-5xl">
-                Your Future Starts with
-                <span className="block text-teal-300">Better Learning.</span>
-              </h2>
+        .home-page {
+          --teal: #0d9488;
+          --teal-dark: #087d74;
+          --navy: #102d3a;
+          --muted: #64748b;
+          color: var(--navy);
+          background: #ffffff;
+          overflow: hidden;
+          font-family: Arial, "Noto Sans Bengali", sans-serif;
+        }
 
-              <p className="mx-auto mt-5 max-w-xl leading-8 text-teal-50/80">
-                Join SA Delta Classroom and take your next step towards
-                a smarter and more successful learning journey.
-              </p>
+        .container {
+          width: min(1160px, calc(100% - 40px));
+          margin: 0 auto;
+        }
 
-              <div className="mt-9 flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/register"
-                  className="inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 text-sm font-extrabold text-teal-800 shadow-xl transition hover:-translate-y-1 hover:bg-teal-50"
-                >
-                  Create Free Account <ArrowIcon />
-                </Link>
-                <Link
-                  href="/login"
-                  className="inline-flex items-center gap-3 rounded-xl border border-white/30 bg-white/10 px-8 py-4 text-sm font-bold text-white transition hover:bg-white/20"
-                >
-                  Sign In
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
 
-      <Footer />
-    </div>
+        .site-header {
+          position: relative;
+          z-index: 20;
+          background: rgba(255, 255, 255, 0.96);
+          border-bottom: 1px solid #edf3f3;
+        }
+
+        .header-inner {
+          height: 82px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 24px;
+        }
+
+        .brand-logo {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+
+        .brand-symbol {
+          width: 45px;
+          height: 45px;
+          display: grid;
+          place-items: center;
+          border-radius: 14px;
+          background: linear-gradient(145deg, #16b8a7, #087d74);
+          box-shadow: 0 7px 18px #0d948833;
+        }
+
+        .brand-symbol svg {
+          width: 32px;
+          height: 32px;
+        }
+
+        .brand-text {
+          display: flex;
+          flex-direction: column;
+          line-height: 1;
+        }
+
+        .brand-text strong {
+          font-size: 21px;
+          letter-spacing: 1.5px;
+          color: #123b43;
+          font-weight: 900;
+        }
+
+        .brand-text small {
+          font-size: 9px;
+          letter-spacing: 3px;
+          color: var(--teal);
+          margin-top: 5px;
+          font-weight: 800;
+        }
+
+        .desktop-nav {
+          display: flex;
+          align-items: center;
+          gap: 27px;
+        }
+
+        .desktop-nav a {
+          font-size: 13px;
+          color: #536574;
+          font-weight: 700;
+          transition: color 0.2s;
+        }
+
+        .desktop-nav a:hover,
+        .login-link:hover {
+          color: var(--teal);
+        }
+
+        .header-actions {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .login-link {
+          font-size: 13px;
+          font-weight: 800;
+        }
+
+        .register-button,
+        .primary-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          background: var(--teal);
+          color: white;
+          border-radius: 10px;
+          padding: 13px 20px;
+          font-size: 13px;
+          font-weight: 800;
+          box-shadow: 0 8px 20px #0d94882b;
+          transition: 0.25s;
+        }
+
+        .register-button:hover,
+        .primary-button:hover {
+          background: var(--teal-dark);
+          transform: translateY(-3px);
+        }
+
+        .mobile-login {
+          display: none;
+          color: var(--teal);
+          font-size: 13px;
+          font-weight: 800;
+        }
+
+        .hero-section {
+          position: relative;
+          background:
+            radial-gradient(ellipse at 80% 40%, #d9f5ef 0, transparent 36%),
+            linear-gradient(115deg, #f5fcfa 0%, #ffffff 60%, #f0faf8 100%);
+          padding: 75px 0 85px;
+        }
+
+        .hero-grid {
+          display: grid;
+          grid-template-columns: 1fr 0.95fr;
+          align-items: center;
+          gap: 55px;
+          position: relative;
+          z-index: 2;
+        }
+
+        .hero-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+          background: #e2f7f2;
+          border: 1px solid #c7eee5;
+          color: #087d74;
+          border-radius: 30px;
+          padding: 9px 15px;
+          font-size: 12px;
+          font-weight: 800;
+          margin-bottom: 24px;
+        }
+
+        .label-dot {
+          width: 8px;
+          height: 8px;
+          background: #0d9488;
+          border-radius: 50%;
+          box-shadow: 0 0 0 4px #0d94881c;
+        }
+
+        .hero-content h1 {
+          font-size: clamp(42px, 5.2vw, 68px);
+          line-height: 1.2;
+          letter-spacing: -2px;
+          font-weight: 900;
+          color: #102f3b;
+          margin: 0;
+        }
+
+        .hero-content h1 span,
+        .section-heading h2 span,
+        .center-heading h2 span {
+          color: var(--teal);
+        }
+
+        .hero-description {
+          color: #647783;
+          font-size: 15px;
+          line-height: 2;
+          max-width: 520px;
+          margin: 22px 0 27px;
+        }
+
+        .hero-buttons {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 14px;
+        }
+
+        .primary-button {
+          padding: 16px 25px;
+        }
+
+        .secondary-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 18px;
+          font-size: 13px;
+          font-weight: 800;
+          color: #24444d;
+        }
+
+        .play-icon {
+          display: grid;
+          place-items: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: #e1f5f0;
+          color: var(--teal);
+          font-size: 10px;
+        }
+
+        .hero-trust {
+          display: flex;
+          align-items: center;
+          gap: 13px;
+          margin-top: 35px;
+        }
+
+        .trust-avatars {
+          display: flex;
+        }
+
+        .trust-avatars span {
+          width: 34px;
+          height: 34px;
+          display: grid;
+          place-items: center;
+          border-radius: 50%;
+          background: #d9f1ec;
+          border: 2px solid white;
+          margin-left: -7px;
+          font-size: 16px;
+        }
+
+        .trust-avatars span:first-child {
+          margin-left: 0;
+        }
+
+        .hero-trust strong,
+        .hero-trust small {
+          display: block;
+        }
+
+        .hero-trust strong {
+          font-size: 12px;
+          color: #24444d;
+        }
+
+        .hero-trust small {
+          font-size: 11px;
+          color: #81919a;
+          margin-top: 4px;
+        }
+
+        .hero-art {
+          min-height: 420px;
+          position: relative;
+          display: grid;
+          place-items: center;
+        }
+
+        .art-glow {
+          position: absolute;
+          width: 350px;
+          height: 350px;
+          border-radius: 50%;
+          background: #c8eee5;
+          opacity: 0.65;
+          filter: blur(2px);
+        }
+
+        .student-card {
+          position: relative;
+          z-index: 2;
+          width: min(350px, 80%);
+          padding: 13px;
+          border-radius: 25px;
+          background: white;
+          box-shadow: 0 25px 70px #174b4b1c;
+          transform: rotate(-3deg);
+        }
+
+        .student-window {
+          background: #e6f7f2;
+          border-radius: 17px;
+          overflow: hidden;
+        }
+
+        .window-dots {
+          height: 34px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding-left: 13px;
+          background: #f7fbfa;
+        }
+
+        .window-dots i {
+          width: 7px;
+          height: 7px;
+          background: #b4d8ce;
+          border-radius: 50%;
+        }
+
+        .window-dots i:first-child {
+          background: #ed9b8c;
+        }
+
+        .window-dots i:nth-child(2) {
+          background: #e9c66c;
+        }
+
+        .student-scene {
+          position: relative;
+          height: 275px;
+          overflow: hidden;
+          background: linear-gradient(145deg, #d9f3ec, #b6e5da);
+        }
+
+        .sun {
+          position: absolute;
+          top: 28px;
+          right: 35px;
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          background: #ffdc8a;
+          box-shadow: 0 0 0 12px #ffdc8a35;
+        }
+
+        .student-head {
+          position: absolute;
+          left: 50%;
+          top: 48px;
+          transform: translateX(-50%);
+          width: 125px;
+          height: 190px;
+        }
+
+        .student-face {
+          position: absolute;
+          top: 15px;
+          left: 28px;
+          width: 70px;
+          height: 78px;
+          border-radius: 45% 45% 48% 48%;
+          background: #d99569;
+          z-index: 2;
+        }
+
+        .student-face i {
+          position: absolute;
+          top: 35px;
+          left: 18px;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: #283a42;
+        }
+
+        .student-face i:nth-child(2) {
+          left: 47px;
+        }
+
+        .student-hair {
+          position: absolute;
+          top: 5px;
+          left: 25px;
+          width: 75px;
+          height: 40px;
+          border-radius: 50% 50% 20% 20%;
+          background: #263d46;
+          z-index: 3;
+          transform: rotate(-5deg);
+        }
+
+        .student-body {
+          position: absolute;
+          top: 83px;
+          left: 8px;
+          width: 110px;
+          height: 115px;
+          border-radius: 45px 45px 12px 12px;
+          background: #0d9488;
+        }
+
+        .laptop {
+          position: absolute;
+          z-index: 4;
+          bottom: 15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 175px;
+        }
+
+        .laptop-screen {
+          height: 100px;
+          border: 7px solid #314d59;
+          border-bottom-width: 10px;
+          border-radius: 10px 10px 3px 3px;
+          background: linear-gradient(145deg, #123f4b, #0d9488);
+          display: grid;
+          place-items: center;
+          color: white;
+          font-size: 42px;
+          font-weight: 900;
+        }
+
+        .laptop-base {
+          height: 9px;
+          background: #607982;
+          border-radius: 2px 2px 10px 10px;
+        }
+
+        .book {
+          position: absolute;
+          bottom: 8px;
+          width: 55px;
+          height: 13px;
+          border-radius: 3px;
+          background: #f0b56b;
+          transform: rotate(-10deg);
+        }
+
+        .book-a {
+          left: 12px;
+        }
+
+        .book-b {
+          right: 12px;
+          background: #7d9fe0;
+          transform: rotate(10deg);
+        }
+
+        .art-caption {
+          display: flex;
+          align-items: center;
+          gap: 11px;
+          padding: 15px 10px 5px;
+        }
+
+        .caption-icon {
+          width: 35px;
+          height: 35px;
+          border-radius: 11px;
+          background: #e0f5ef;
+          color: var(--teal);
+          display: grid;
+          place-items: center;
+        }
+
+        .art-caption strong,
+        .art-caption small {
+          display: block;
+        }
+
+        .art-caption strong {
+          font-size: 13px;
+        }
+
+        .art-caption small {
+          color: #83949a;
+          font-size: 10px;
+          margin-top: 4px;
+        }
+
+        .floating-card {
+          position: absolute;
+          z-index: 4;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 13px 16px;
+          border-radius: 13px;
+          background: white;
+          box-shadow: 0 12px 35px #164a4520;
+          animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-card > span {
+          font-size: 23px;
+        }
+
+        .floating-card strong,
+        .floating-card small {
+          display: block;
+          white-space: nowrap;
+        }
+
+        .floating-card strong {
+          font-size: 11px;
+        }
+
+        .floating-card small {
+          color: #91a0a5;
+          font-size: 9px;
+          margin-top: 4px;
+        }
+
+        .card-one {
+          top: 55px;
+          left: -5px;
+        }
+
+        .card-two {
+          right: -8px;
+          bottom: 65px;
+          animation-delay: -2s;
+        }
+
+        .art-circle {
+          position: absolute;
+          border: 1px dashed #8acfc0;
+          border-radius: 50%;
+        }
+
+        .circle-a {
+          width: 420px;
+          height: 420px;
+        }
+
+        .circle-b {
+          width: 475px;
+          height: 475px;
+          opacity: 0.45;
+        }
+
+        .hero-bottom-shape {
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          width: 100%;
+          height: 22px;
+          background: white;
+          clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+
+        .stats-section {
+          padding: 25px 0;
+          border-bottom: 1px solid #edf3f2;
+        }
+
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        }
+
+        .stat-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 8px;
+        }
+
+        .stat-item > span {
+          display: grid;
+          place-items: center;
+          width: 43px;
+          height: 43px;
+          flex-shrink: 0;
+          border-radius: 13px;
+          background: #e8f7f3;
+          font-size: 20px;
+        }
+
+        .stat-item strong,
+        .stat-item small {
+          display: block;
+        }
+
+        .stat-item strong {
+          font-size: 13px;
+        }
+
+        .stat-item small {
+          color: #82929a;
+          font-size: 10px;
+          margin-top: 5px;
+        }
+
+        .courses-section {
+          padding: 95px 0 85px;
+          background: #fbfdfd;
+        }
+
+        .section-heading {
+          display: flex;
+          align-items: end;
+          justify-content: space-between;
+          gap: 20px;
+          margin-bottom: 35px;
+        }
+
+        .eyebrow {
+          display: block;
+          color: var(--teal);
+          font-size: 10px;
+          letter-spacing: 2.5px;
+          font-weight: 900;
+          margin-bottom: 13px;
+        }
+
+        .section-heading h2,
+        .center-heading h2 {
+          font-size: clamp(27px, 3.5vw, 39px);
+          line-height: 1.35;
+          margin: 0;
+          font-weight: 900;
+          color: #173b46;
+        }
+
+        .section-heading p,
+        .center-heading p {
+          color: #82929a;
+          font-size: 13px;
+          line-height: 1.8;
+          margin: 10px 0 0;
+        }
+
+        .view-all {
+          display: inline-flex;
+          gap: 12px;
+          align-items: center;
+          color: var(--teal);
+          font-size: 12px;
+          font-weight: 900;
+          white-space: nowrap;
+          padding-bottom: 7px;
+        }
+
+        .course-marquee {
+          width: 100%;
+          overflow: hidden;
+          padding: 8px 0 18px;
+        }
+
+        .course-track {
+          display: flex;
+          width: max-content;
+          animation: moveCourses 35s linear infinite;
+        }
+
+        .course-marquee:hover .course-track,
+        .course-marquee:focus-within .course-track {
+          animation-play-state: paused;
+        }
+
+        .course-slide {
+          width: 275px;
+          flex-shrink: 0;
+          padding: 0 10px;
+        }
+
+        .course-card {
+          overflow: hidden;
+          height: 100%;
+          background: white;
+          border: 1px solid #eaf0ef;
+          border-radius: 17px;
+          transition: 0.3s;
+          box-shadow: 0 7px 22px #153e3d08;
+        }
+
+        .course-card:hover {
+          transform: translateY(-7px);
+          box-shadow: 0 16px 35px #153e3d15;
+          border-color: #b9e8dc;
+        }
+
+        .course-art {
+          height: 150px;
+          position: relative;
+          display: grid;
+          place-items: center;
+          overflow: hidden;
+        }
+
+        .course-art.teal {
+          background: linear-gradient(135deg, #d5f4eb, #a8e3d4);
+        }
+
+        .course-art.blue {
+          background: linear-gradient(135deg, #e0eaff, #b8cfff);
+        }
+
+        .course-art.purple {
+          background: linear-gradient(135deg, #eee4ff, #d4c1ff);
+        }
+
+        .course-art.orange {
+          background: linear-gradient(135deg, #fff0d9, #ffd5a0);
+        }
+
+        .course-art.pink {
+          background: linear-gradient(135deg, #ffe5ef, #ffc4da);
+        }
+
+        .course-category {
+          position: absolute;
+          left: 13px;
+          top: 13px;
+          z-index: 2;
+          padding: 6px 9px;
+          border-radius: 20px;
+          background: #ffffffb8;
+          color: #35545b;
+          font-size: 8px;
+          font-weight: 900;
+          letter-spacing: 1px;
+        }
+
+        .course-icon {
+          position: relative;
+          z-index: 2;
+          font-size: 57px;
+          filter: drop-shadow(0 9px 8px #214d4220);
+          transition: transform 0.3s;
+        }
+
+        .course-card:hover .course-icon {
+          transform: scale(1.12) rotate(-5deg);
+        }
+
+        .course-decoration {
+          position: absolute;
+          width: 120px;
+          height: 120px;
+          border: 1px solid #ffffff8c;
+          border-radius: 50%;
+          right: -22px;
+          bottom: -65px;
+          box-shadow: 0 0 0 15px #ffffff25, 0 0 0 30px #ffffff19;
+        }
+
+        .course-content {
+          padding: 18px;
+        }
+
+        .course-content h3 {
+          font-size: 16px;
+          margin: 0;
+          color: #193b45;
+          font-weight: 900;
+        }
+
+        .course-content p {
+          font-size: 11px;
+          color: #89979c;
+          margin: 8px 0 17px;
+        }
+
+        .course-bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-top: 1px solid #eef2f1;
+          padding-top: 13px;
+        }
+
+        .course-price strong,
+        .course-price del {
+          display: block;
+        }
+
+        .course-price strong {
+          color: var(--teal);
+          font-size: 16px;
+        }
+
+        .course-price del {
+          color: #a8b3b6;
+          font-size: 10px;
+          margin-top: 3px;
+        }
+
+        .course-arrow {
+          width: 35px;
+          height: 35px;
+          display: grid;
+          place-items: center;
+          border-radius: 11px;
+          background: #e8f7f3;
+          color: var(--teal);
+          font-size: 20px;
+          font-weight: 800;
+          transition: 0.2s;
+        }
+
+        .course-arrow:hover {
+          background: var(--teal);
+          color: white;
+        }
+
+        .slider-hint {
+          text-align: center;
+          color: #9aa9ac;
+          font-size: 10px;
+          margin-top: 10px;
+        }
+
+        .slider-hint span {
+          color: var(--teal);
+          padding: 0 8px;
+        }
+
+        .exam-section {
+          padding: 85px 0;
+          background: #103b43;
+          color: white;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .exam-section::before {
+          content: "";
+          position: absolute;
+          width: 450px;
+          height: 450px;
+          border: 1px solid #ffffff13;
+          border-radius: 50%;
+          top: -230px;
+          right: -100px;
+          box-shadow: 0 0 0 40px #ffffff08, 0 0 0 80px #ffffff05;
+        }
+
+        .exam-grid {
+          display: grid;
+          grid-template-columns: 1fr 0.8fr;
+          align-items: center;
+          gap: 70px;
+        }
+
+        .eyebrow.light {
+          color: #65d8c4;
+        }
+
+        .exam-content h2 {
+          font-size: clamp(30px, 4vw, 46px);
+          line-height: 1.4;
+          margin: 0;
+          font-weight: 900;
+        }
+
+        .exam-content h2 span {
+          color: #5bd5bf;
+        }
+
+        .exam-content p {
+          color: #c0d5d5;
+          font-size: 13px;
+          line-height: 2;
+          max-width: 500px;
+          margin: 18px 0 25px;
+        }
+
+        .exam-button {
+          display: inline-flex;
+          gap: 15px;
+          align-items: center;
+          padding: 14px 21px;
+          border-radius: 9px;
+          background: #ffffff;
+          color: #087d74;
+          font-size: 12px;
+          font-weight: 900;
+          transition: 0.2s;
+        }
+
+        .exam-button:hover {
+          transform: translateY(-3px);
+          background: #dff8f0;
+        }
+
+        .exam-visual {
+          min-height: 310px;
+          position: relative;
+          display: grid;
+          place-items: center;
+        }
+
+        .exam-circle {
+          position: absolute;
+          width: 270px;
+          height: 270px;
+          border-radius: 50%;
+          background: #1a5960;
+        }
+
+        .exam-paper {
+          position: relative;
+          z-index: 2;
+          width: 235px;
+          padding: 20px;
+          background: white;
+          color: #173b46;
+          border-radius: 13px;
+          box-shadow: 0 20px 50px #001b203f;
+          transform: rotate(4deg);
+        }
+
+        .paper-top {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          color: var(--teal);
+          font-weight: 900;
+        }
+
+        .paper-top span {
+          font-size: 20px;
+        }
+
+        .paper-top small {
+          font-size: 8px;
+          letter-spacing: 1.5px;
+        }
+
+        .exam-paper h3 {
+          font-size: 19px;
+          margin: 20px 0 4px;
+        }
+
+        .exam-paper > p {
+          color: #93a1a4;
+          font-size: 10px;
+          margin: 0 0 15px;
+        }
+
+        .paper-line {
+          height: 1px;
+          background: #edf1f0;
+          margin-bottom: 14px;
+        }
+
+        .question-row {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin: 12px 0;
+        }
+
+        .question-row span {
+          font-size: 10px;
+          color: #8b9c9f;
+        }
+
+        .question-row div {
+          height: 6px;
+          width: 115px;
+          border-radius: 10px;
+          background: #eaf1ef;
+        }
+
+        .question-row i {
+          margin-left: auto;
+          width: 18px;
+          height: 18px;
+          display: grid;
+          place-items: center;
+          border-radius: 50%;
+          background: #dff6ee;
+          color: var(--teal);
+          font-size: 10px;
+          font-style: normal;
+        }
+
+        .paper-progress {
+          height: 6px;
+          background: #e8f0ee;
+          border-radius: 10px;
+          margin-top: 18px;
+          overflow: hidden;
+        }
+
+        .paper-progress span {
+          display: block;
+          width: 75%;
+          height: 100%;
+          background: var(--teal);
+          border-radius: 10px;
+        }
+
+        .progress-label {
+          display: block;
+          text-align: right;
+          margin-top: 7px;
+          color: #8a9a9d;
+          font-size: 8px;
+        }
+
+        .exam-badge {
+          position: absolute;
+          right: 0;
+          bottom: 25px;
+          z-index: 3;
+          background: #ffffff;
+          color: #087d74;
+          padding: 12px 16px;
+          border-radius: 10px;
+          font-size: 11px;
+          font-weight: 900;
+          box-shadow: 0 10px 25px #001b2035;
+        }
+
+        .features-section {
+          padding: 95px 0;
+          background: #ffffff;
+        }
+
+        .center-heading {
+          text-align: center;
+          max-width: 650px;
+          margin: 0 auto 42px;
+        }
+
+        .center-heading p {
+          max-width: 500px;
+          margin: 12px auto 0;
+        }
+
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 18px;
+        }
+
+        .feature-card {
+          position: relative;
+          padding: 25px 20px;
+          min-height: 195px;
+          border: 1px solid #eaf1ef;
+          border-radius: 15px;
+          background: #ffffff;
+          transition: 0.25s;
+          overflow: hidden;
+        }
+
+        .feature-card:hover {
+          transform: translateY(-6px);
+          border-color: #bce8dc;
+          box-shadow: 0 15px 35px #153e3d0e;
+        }
+
+        .feature-icon {
+          width: 49px;
+          height: 49px;
+          border-radius: 14px;
+          display: grid;
+          place-items: center;
+          background: #e5f7f1;
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+
+        .feature-1 {
+          background: #e9efff;
+        }
+
+        .feature-2 {
+          background: #fff1dc;
+        }
+
+        .feature-3 {
+          background: #f3eaff;
+        }
+
+        .feature-card h3 {
+          font-size: 15px;
+          margin: 0 0 9px;
+          font-weight: 900;
+        }
+
+        .feature-card p {
+          color: #82939a;
+          font-size: 11px;
+          line-height: 1.8;
+          margin: 0;
+        }
+
+        .feature-number {
+          position: absolute;
+          right: 13px;
+          bottom: 7px;
+          color: #eff4f2;
+          font-size: 35px;
+          font-weight: 900;
+        }
+
+        .question-section {
+          padding: 0 0 90px;
+        }
+
+        .question-box {
+          display: flex;
+          align-items: center;
+          gap: 23px;
+          padding: 30px 35px;
+          border: 1px solid #dcefe9;
+          border-radius: 18px;
+          background: linear-gradient(110deg, #f0faf7, #ffffff);
+        }
+
+        .question-icon {
+          width: 65px;
+          height: 65px;
+          flex-shrink: 0;
+          display: grid;
+          place-items: center;
+          border-radius: 18px;
+          background: #d9f2e9;
+          font-size: 30px;
+        }
+
+        .question-copy {
+          flex: 1;
+        }
+
+        .question-copy .eyebrow {
+          margin-bottom: 7px;
+        }
+
+        .question-copy h2 {
+          margin: 0;
+          font-size: 21px;
+          font-weight: 900;
+        }
+
+        .question-copy p {
+          margin: 8px 0 0;
+          color: #819197;
+          font-size: 11px;
+          line-height: 1.8;
+        }
+
+        .question-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          white-space: nowrap;
+          background: var(--teal);
+          color: white;
+          padding: 14px 18px;
+          border-radius: 9px;
+          font-size: 11px;
+          font-weight: 900;
+          transition: 0.2s;
+        }
+
+        .question-button:hover {
+          background: var(--teal-dark);
+        }
+
+        .cta-section {
+          position: relative;
+          overflow: hidden;
+          text-align: center;
+          padding: 75px 0 80px;
+          background: linear-gradient(120deg, #0c756e, #0e9c8c);
+          color: white;
+        }
+
+        .cta-section::before,
+        .cta-section::after {
+          content: "";
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          border: 1px solid #ffffff20;
+          border-radius: 50%;
+        }
+
+        .cta-section::before {
+          top: -180px;
+          left: -100px;
+          box-shadow: 0 0 0 30px #ffffff08, 0 0 0 60px #ffffff06;
+        }
+
+        .cta-section::after {
+          bottom: -220px;
+          right: -70px;
+          box-shadow: 0 0 0 35px #ffffff08, 0 0 0 70px #ffffff05;
+        }
+
+        .cta-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .cta-symbol {
+          display: grid;
+          place-items: center;
+          width: 48px;
+          height: 48px;
+          margin: 0 auto 20px;
+          border: 1px solid #ffffff66;
+          border-radius: 14px;
+          font-size: 26px;
+          font-weight: 900;
+        }
+
+        .cta-section .eyebrow {
+          color: #b5f5e7;
+        }
+
+        .cta-section h2 {
+          font-size: clamp(30px, 4vw, 46px);
+          line-height: 1.4;
+          margin: 0;
+          font-weight: 900;
+        }
+
+        .cta-section h2 span {
+          color: #b7f4e3;
+        }
+
+        .cta-section p {
+          color: #d4f0e9;
+          font-size: 13px;
+          margin: 15px 0 25px;
+        }
+
+        .cta-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 14px;
+          padding: 15px 23px;
+          border-radius: 10px;
+          background: white;
+          color: #087d74;
+          font-size: 12px;
+          font-weight: 900;
+          transition: 0.2s;
+        }
+
+        .cta-button:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 25px #003c3435;
+        }
+
+        .site-footer {
+          padding: 65px 0 0;
+          background: #102f3a;
+          color: white;
+        }
+
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+          gap: 40px;
+          padding-bottom: 45px;
+        }
+
+        .footer-brand .brand-text strong {
+          color: white;
+        }
+
+        .footer-brand p {
+          max-width: 270px;
+          color: #a6bbc0;
+          font-size: 11px;
+          line-height: 2;
+          margin-top: 20px;
+        }
+
+        .footer-links,
+        .footer-contact {
+          display: flex;
+          flex-direction: column;
+          gap: 13px;
+        }
+
+        .footer-links h3,
+        .footer-contact h3 {
+          font-size: 14px;
+          margin: 5px 0 9px;
+        }
+
+        .footer-links a,
+        .footer-contact p,
+        .footer-contact > a {
+          color: #a6bbc0;
+          font-size: 11px;
+          margin: 0;
+          transition: color 0.2s;
+        }
+
+        .footer-links a:hover,
+        .footer-contact > a:hover {
+          color: #65d8c4;
+        }
+
+        .footer-bottom {
+          display: flex;
+          justify-content: space-between;
+          gap: 15px;
+          border-top: 1px solid #ffffff18;
+          padding: 20px 0;
+        }
+
+        .footer-bottom p {
+          color: #90a8ad;
+          font-size: 10px;
+          margin: 0;
+        }
+
+        @keyframes moveCourses {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .course-track,
+          .floating-card {
+            animation: none;
+          }
+
+          * {
+            scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .desktop-nav {
+            gap: 14px;
+          }
+
+          .desktop-nav a {
+            font-size: 11px;
+          }
+
+          .hero-grid {
+            gap: 20px;
+          }
+
+          .hero-content h1 {
+            font-size: 48px;
+          }
+
+          .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 650px) {
+          .container {
+            width: min(100% - 30px, 500px);
+          }
+
+          .header-inner {
+            height: 70px;
+          }
+
+          .brand-symbol {
+            width: 39px;
+            height: 39px;
+          }
+
+          .brand-text strong {
+            font-size: 17px;
+          }
+
+          .brand-text small {
+            font-size: 8px;
+          }
+
+          .desktop-nav,
+          .header-actions {
+            display: none;
+          }
+
+          .mobile-login {
+            display: block;
+          }
+
+          .hero-section {
+            padding: 48px 0 55px;
+          }
+
+          .hero-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+          }
+
+          .hero-content h1 {
+            font-size: 43px;
+          }
+
+          .hero-description {
+            font-size: 13px;
+            margin: 16px 0 22px;
+          }
+
+          .hero-art {
+            min-height: 360px;
+            margin-top: 10px;
+          }
+
+          .student-card {
+            width: 270px;
+          }
+
+          .student-scene {
+            height: 235px;
+          }
+
+          .art-glow {
+            width: 270px;
+            height: 270px;
+          }
+
+          .circle-a {
+            width: 330px;
+            height: 330px;
+          }
+
+          .circle-b {
+            width: 370px;
+            height: 370px;
+          }
+
+          .floating-card {
+            padding: 9px 11px;
+          }
+
+          .floating-card strong {
+            font-size: 9px;
+          }
+
+          .floating-card small {
+            font-size: 8px;
+          }
+
+          .card-one {
+            top: 35px;
+            left: 0;
+          }
+
+          .card-two {
+            right: 0;
+            bottom: 45px;
+          }
+
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px 5px;
+          }
+
+          .stat-item {
+            gap: 8px;
+          }
+
+          .stat-item > span {
+            width: 36px;
+            height: 36px;
+            font-size: 17px;
+          }
+
+          .stat-item strong {
+            font-size: 10px;
+          }
+
+          .stat-item small {
+            font-size: 8px;
+          }
+
+          .courses-section,
+          .features-section {
+            padding: 65px 0;
+          }
+
+          .section-heading {
+            align-items: flex-start;
+            flex-direction: column;
+            margin-bottom: 25px;
+          }
+
+          .section-heading h2,
+          .center-heading h2 {
+            font-size: 28px;
+          }
+
+          .section-heading p,
+          .center-heading p {
+            font-size: 11px;
+          }
+
+          .course-slide {
+            width: 245px;
+          }
+
+          .course-art {
+            height: 130px;
+          }
+
+          .exam-section {
+            padding: 65px 0;
+          }
+
+          .exam-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+
+          .exam-content h2 {
+            font-size: 32px;
+          }
+
+          .exam-visual {
+            min-height: 290px;
+          }
+
+          .features-grid {
+            gap: 12px;
+          }
+
+          .feature-card {
+            min-height: 180px;
+            padding: 18px 13px;
+          }
+
+          .feature-card h3 {
+            font-size: 12px;
+          }
+
+          .feature-card p {
+            font-size: 10px;
+          }
+
+          .question-section {
+            padding-bottom: 65px;
+          }
+
+          .question-box {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 23px;
+            gap: 14px;
+          }
+
+          .question-copy h2 {
+            font-size: 18px;
+          }
+
+          .cta-section {
+            padding: 65px 0;
+          }
+
+          .cta-section h2 {
+            font-size: 31px;
+          }
+
+          .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 18px;
+          }
+
+          .footer-brand {
+            grid-column: 1 / -1;
+          }
+
+          .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .hero-content h1 {
+            font-size: 36px;
+          }
+
+          .features-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .footer-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      `}</style>
+    </main>
   );
 }
