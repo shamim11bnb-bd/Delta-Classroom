@@ -1,0 +1,1 @@
+export class QuestionRepository { static async getFilter() { return []; } }

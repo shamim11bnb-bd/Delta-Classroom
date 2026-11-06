@@ -1,0 +1,1 @@
+export interface UserSession { id: string; email: string; role: 'student' | 'admin'; }
