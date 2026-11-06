@@ -1,0 +1,1 @@
+CREATE TABLE exam_results (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), account_id UUID REFERENCES accounts(id), exam_id UUID REFERENCES exams(id), score INT NOT NULL, total INT NOT NULL, created_at TIMESTAMPTZ DEFAULT now());

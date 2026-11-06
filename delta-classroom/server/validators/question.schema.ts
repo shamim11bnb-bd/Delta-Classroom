@@ -1,0 +1,2 @@
+import { z } from 'zod';
+export const QuestionSchema = z.object({ text: z.string(), options: z.array(z.string()) });

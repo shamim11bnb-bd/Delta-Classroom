@@ -1,0 +1,3 @@
+export class AuthService {
+  static async validateSession(token: string) { return true; }
+}

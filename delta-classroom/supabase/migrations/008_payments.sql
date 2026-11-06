@@ -1,0 +1,1 @@
+CREATE TABLE payments (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), account_id UUID REFERENCES accounts(id), amount NUMERIC NOT NULL, trx_id TEXT UNIQUE NOT NULL, status TEXT DEFAULT 'pending', created_at TIMESTAMPTZ DEFAULT now());

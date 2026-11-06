@@ -1,0 +1,3 @@
+export class GuestTrackingService {
+  static async logVisit(ip: string) { return true; }
+}

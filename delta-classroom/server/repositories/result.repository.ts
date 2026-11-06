@@ -1,0 +1,1 @@
+export class ResultRepository { static async save(result: any) { return true; } }
