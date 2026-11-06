@@ -1,3 +1,0 @@
-export class EnrollmentService {
-  static async checkEnrollment(userId: string, courseId: string) { return true; }
-}

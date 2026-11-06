@@ -1,1 +1,0 @@
-console.log('MySQL to Supabase migration script initialized...');

@@ -1,1 +1,0 @@
-export function apiResponse(data: any, status = 200) { return Response.json(data, { status }); }

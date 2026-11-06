@@ -1,1 +1,0 @@
-CREATE TABLE guest_visits (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), ip_address TEXT NOT NULL, visited_at TIMESTAMPTZ DEFAULT now());

@@ -1,1 +1,0 @@
-CREATE TABLE result_pdfs (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), result_id UUID REFERENCES exam_results(id), pdf_path TEXT NOT NULL, generated_at TIMESTAMPTZ DEFAULT now());

@@ -1,2 +1,0 @@
-import { z } from 'zod';
-export const ExamSchema = z.object({ title: z.string(), duration: z.number() });

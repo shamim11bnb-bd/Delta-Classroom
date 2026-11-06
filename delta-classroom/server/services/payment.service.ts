@@ -1,3 +1,0 @@
-export class PaymentService {
-  static async verifyPayment(trxId: string) { return true; }
-}

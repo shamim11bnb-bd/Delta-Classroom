@@ -1,1 +1,0 @@
-CREATE TABLE enrollments (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), account_id UUID REFERENCES accounts(id), course_id UUID REFERENCES courses(id), enrolled_at TIMESTAMPTZ DEFAULT now());

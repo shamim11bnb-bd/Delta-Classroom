@@ -1,1 +1,0 @@
-CREATE TABLE courses (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), title TEXT NOT NULL, description TEXT, price NUMERIC DEFAULT 0.00, created_at TIMESTAMPTZ DEFAULT now());
