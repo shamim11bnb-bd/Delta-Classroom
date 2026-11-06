@@ -1,1 +1,0 @@
-import { z } from 'zod'; export const CourseSchema = z.object({ title: z.string(), price: z.number() });

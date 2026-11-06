@@ -1,1 +1,0 @@
-CREATE TABLE lessons (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), course_id UUID REFERENCES courses(id), title TEXT NOT NULL, video_url TEXT, created_at TIMESTAMPTZ DEFAULT now());

@@ -1,1 +1,0 @@
-export class ExamRepository { static async getById(id: string) { return null; } }

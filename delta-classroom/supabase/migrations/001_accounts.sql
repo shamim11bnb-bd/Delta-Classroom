@@ -1,1 +1,0 @@
-CREATE TABLE accounts (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), email TEXT UNIQUE NOT NULL, name TEXT, role TEXT DEFAULT 'student', created_at TIMESTAMPTZ DEFAULT now());

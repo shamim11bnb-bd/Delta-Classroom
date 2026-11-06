@@ -1,1 +1,0 @@
-export class PaperRepository { static async savePaper(p: any) { return true; } }
