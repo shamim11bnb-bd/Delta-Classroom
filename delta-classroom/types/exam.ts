@@ -1,0 +1,1 @@
+export interface Exam { id: string; title: string; durationMinutes: number; totalMarks: number; }

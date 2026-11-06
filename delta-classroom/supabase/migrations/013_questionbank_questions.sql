@@ -1,0 +1,1 @@
+CREATE TABLE questionbank_questions (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), text TEXT NOT NULL, subject TEXT NOT NULL, difficulty TEXT DEFAULT 'medium', options JSONB, answer TEXT);

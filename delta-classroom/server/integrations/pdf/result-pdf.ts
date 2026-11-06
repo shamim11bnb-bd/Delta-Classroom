@@ -1,0 +1,1 @@
+export async function generateResultPDF(result: any) { return Buffer.from('PDF Content'); }

@@ -1,0 +1,1 @@
+CREATE TABLE exam_questions (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), exam_id UUID REFERENCES exams(id), question_text TEXT NOT NULL, options JSONB NOT NULL, correct_option INT NOT NULL);
