@@ -3,11 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Exam[Id]Page() {
+export default function ExamDetailPage({ params }: { params: { id: string } }) {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-slate-900 border border-slate-800 rounded-xl space-y-6">
       <div className="border-b border-slate-800 pb-4">
-        <h1 className="text-2xl font-bold text-indigo-400">অনলাইন পরীক্ষা রুম</h1>
+        <h1 className="text-2xl font-bold text-indigo-400">অনলাইন পরীক্ষা রুম (Exam ID: {params.id})</h1>
         <p className="text-slate-400 text-sm mt-1">নির্দিষ্ট পরীক্ষার টাইমার ও প্রশ্নপত্র।</p>
       </div>
 
@@ -18,8 +18,8 @@ export default function Exam[Id]Page() {
       </div>
 
       <div className="pt-2 flex flex-wrap gap-3">
-        <Link href="/" className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium text-white transition">
-          হোম পেজ
+        <Link href="/exam/start" className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded text-sm font-medium text-white transition">
+          পরীক্ষা শুরু করুন
         </Link>
         <Link href="/dashboard" className="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded text-sm font-medium text-slate-200 transition">
           ড্যাশবোর্ড
