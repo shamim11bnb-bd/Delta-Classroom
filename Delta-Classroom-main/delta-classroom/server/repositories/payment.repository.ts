@@ -1,0 +1,1 @@
+export class PaymentRepository { static async log(pay: any) { return true; } }

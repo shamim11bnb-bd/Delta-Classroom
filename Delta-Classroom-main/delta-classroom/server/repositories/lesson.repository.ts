@@ -1,0 +1,1 @@
+export class LessonRepository { static async getByCourse(courseId: string) { return []; } }

@@ -1,0 +1,1 @@
+export class ExamService { static async getExam(id: string) { return { id }; } }

@@ -1,0 +1,1 @@
+export class NoticeRepository { static async getActive() { return []; } }

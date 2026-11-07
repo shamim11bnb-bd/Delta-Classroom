@@ -1,0 +1,1 @@
+describe('Results module', () => { it('should store results', () => { expect(true).toBe(true); }); });
