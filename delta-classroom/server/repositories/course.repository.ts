@@ -1,0 +1,1 @@
+export class CourseRepository { static async getAll() { return []; } }

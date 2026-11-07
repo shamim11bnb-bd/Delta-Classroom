@@ -1,0 +1,1 @@
+export function generateCsrfToken() { return 'csrf-secret'; }

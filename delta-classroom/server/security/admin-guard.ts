@@ -1,0 +1,1 @@
+export function checkAdminAccess(req: any) { return true; }

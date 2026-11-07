@@ -1,0 +1,1 @@
+export function verifyToken(token: string) { return { valid: true }; }
