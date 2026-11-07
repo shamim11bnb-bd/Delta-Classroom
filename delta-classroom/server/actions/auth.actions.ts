@@ -1,14 +1,9 @@
 'use server';
 
-type AuthResult = {
-  success: boolean;
-  error?: string;
-  redirectTo?: string;
-};
-
 import { createClient } from '@/lib/supabase/server';
+import { redirect } from 'next/navigation';
 
-export async function loginAction(formData: FormData): Promise<AuthResult> {
+export async function loginAction(formData: FormData) {
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
 
@@ -26,27 +21,26 @@ export async function loginAction(formData: FormData): Promise<AuthResult> {
     return { success: false, error: error.message };
   }
 
-  // ইউজার ডাটাবেজ থেকে তার রোল চেক করা
+  // ইউজারের রোল চেক করা (অ্যাডমিন নাকি স্টুডেন্ট)
   const { data: accountData } = await supabase
     .from('accounts')
     .select('role')
     .eq('id', data.user.id)
     .single();
 
-  // রোল অনুযায়ী সঠিক রিডাইরেক্ট পাথ রিটার্ন করা
   if (accountData?.role === 'admin') {
-    return { success: true, redirectTo: '/admin/dashboard' };
+    redirect('/admin/dashboard');
   } else {
-    return { success: true, redirectTo: '/dashboard' };
+    redirect('/dashboard');
   }
 }
 
-export async function registerAction(formData: FormData): Promise<AuthResult> {
+export async function registerAction(formData: FormData) {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
 
-  if (!email || !password) {
+  if (!email || !password || !name) {
     return { success: false, error: 'All fields are required' };
   }
 
@@ -63,5 +57,5 @@ export async function registerAction(formData: FormData): Promise<AuthResult> {
     return { success: false, error: error.message };
   }
 
-  return { success: true, redirectTo: '/dashboard' };
+  redirect('/dashboard');
 }
