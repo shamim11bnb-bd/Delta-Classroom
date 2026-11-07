@@ -26,7 +26,6 @@ export async function loginAction(formData: FormData): Promise<AuthResult> {
     return { success: false, error: error.message };
   }
 
-  // Check user role from accounts table
   const { data: accountData } = await supabase
     .from('accounts')
     .select('role')
@@ -63,13 +62,17 @@ export async function registerAction(formData: FormData): Promise<AuthResult> {
   }
 
   if (data.user) {
-    // Insert account record
-    await supabase.from('accounts').insert({
+    // accounts টেবিলে ইউজার ডাটা সেভ করা (যদি অলরেডি ট্রিগার বা অন্য কিছু না থাকে)
+    const { error: insertError } = await supabase.from('accounts').upsert({
       id: data.user.id,
       email: email,
       name: name,
       role: 'student',
     });
+
+    if (insertError) {
+      console.error('Account table insert error:', insertError.message);
+    }
   }
 
   return { success: true, redirectTo: '/dashboard' };
