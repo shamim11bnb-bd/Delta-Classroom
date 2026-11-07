@@ -1,9 +1,14 @@
 'use server';
 
-import { createClient } from '@/lib/supabase/server';
-import { redirect } from 'next/navigation';
+type AuthResult = {
+  success: boolean;
+  error?: string;
+  redirectTo?: string;
+};
 
-export async function loginAction(formData: FormData) {
+import { createClient } from '@/lib/supabase/server';
+
+export async function loginAction(formData: FormData): Promise<AuthResult> {
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
 
@@ -28,15 +33,15 @@ export async function loginAction(formData: FormData) {
     .eq('id', data.user.id)
     .single();
 
-  // যদি রোল admin হয় তবে অ্যাডমিন ড্যাশবোর্ডে পাঠাবে, না হলে সাধারণ স্টুডেন্ট ড্যাশবোর্ডে
+  // রোল অনুযায়ী সঠিক রিডাইরেক্ট পাথ রিটার্ন করা
   if (accountData?.role === 'admin') {
-    redirect('/admin/dashboard');
+    return { success: true, redirectTo: '/admin/dashboard' };
   } else {
-    redirect('/dashboard');
+    return { success: true, redirectTo: '/dashboard' };
   }
 }
 
-export async function registerAction(formData: FormData) {
+export async function registerAction(formData: FormData): Promise<AuthResult> {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
@@ -58,5 +63,5 @@ export async function registerAction(formData: FormData) {
     return { success: false, error: error.message };
   }
 
-  redirect('/dashboard');
+  return { success: true, redirectTo: '/dashboard' };
 }
