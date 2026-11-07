@@ -1,1 +1,0 @@
-export class ResultService { static async calculateResult(answers: any) { return { score: 100 }; } }

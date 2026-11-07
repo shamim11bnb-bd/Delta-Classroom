@@ -1,1 +1,0 @@
-export interface QuestionBankItem { id: string; text: string; subject: string; difficulty: string; }

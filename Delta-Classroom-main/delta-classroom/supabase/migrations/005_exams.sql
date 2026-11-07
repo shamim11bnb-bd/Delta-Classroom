@@ -1,1 +1,0 @@
-CREATE TABLE exams (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), title TEXT NOT NULL, duration_minutes INT NOT NULL, total_marks INT NOT NULL, created_at TIMESTAMPTZ DEFAULT now());

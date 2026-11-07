@@ -1,1 +1,0 @@
-export class BannerRepository { static async getActive() { return []; } }

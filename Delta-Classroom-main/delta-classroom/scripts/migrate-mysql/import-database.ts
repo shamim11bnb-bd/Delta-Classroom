@@ -1,1 +1,0 @@
-console.log('MySQL migration script initialized...');

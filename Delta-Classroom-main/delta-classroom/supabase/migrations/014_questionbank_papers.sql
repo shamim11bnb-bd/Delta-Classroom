@@ -1,1 +1,0 @@
-CREATE TABLE questionbank_papers (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), title TEXT NOT NULL, questions_json JSONB NOT NULL, created_at TIMESTAMPTZ DEFAULT now());

@@ -1,1 +1,0 @@
-describe('Courses module', () => { it('should fetch courses', () => { expect(true).toBe(true); }); });
