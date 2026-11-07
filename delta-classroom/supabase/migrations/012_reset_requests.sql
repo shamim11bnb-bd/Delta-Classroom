@@ -1,1 +1,0 @@
-CREATE TABLE reset_requests (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), email TEXT NOT NULL, token TEXT UNIQUE NOT NULL, status TEXT DEFAULT 'pending');

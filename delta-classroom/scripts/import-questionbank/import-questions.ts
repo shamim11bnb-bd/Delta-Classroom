@@ -1,1 +1,0 @@
-console.log('Question bank import script started...');

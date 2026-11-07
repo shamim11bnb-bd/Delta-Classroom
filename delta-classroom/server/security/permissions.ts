@@ -1,1 +1,0 @@
-export function hasPermission(role: string, perm: string) { return true; }

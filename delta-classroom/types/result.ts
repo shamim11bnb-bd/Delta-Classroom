@@ -1,1 +1,0 @@
-export interface ExamResultData { id: string; examId: string; score: number; total: number; passed: boolean; }

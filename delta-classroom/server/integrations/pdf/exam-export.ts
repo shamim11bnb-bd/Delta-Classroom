@@ -1,1 +1,0 @@
-export async function exportExamToPDF(exam: any) { return Buffer.from('Exam PDF'); }

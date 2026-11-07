@@ -1,1 +1,0 @@
-export class AccountRepository { static async findByEmail(email: string) { return null; } }
