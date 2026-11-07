@@ -2,27 +2,18 @@
 
 import { useState } from 'react';
 import { loginAction } from '@/server/actions/auth.actions';
-import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function handleSubmit(formData: FormData) {
     setLoading(true);
     setError(null);
-
-    const formData = new FormData(event.currentTarget);
     const res = await loginAction(formData);
-
     if (res?.error) {
       setError(res.error);
       setLoading(false);
-    } else if (res?.success && res?.redirectTo) {
-      router.push(res.redirectTo);
-      router.refresh();
     }
   }
 
@@ -36,7 +27,7 @@ export default function LoginForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+      <form action={handleSubmit} className="mt-6 space-y-4">
         <div>
           <label className="block text-xs font-semibold text-slate-600">Email</label>
           <input
